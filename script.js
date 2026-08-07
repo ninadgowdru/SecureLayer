@@ -296,3 +296,31 @@ const initCalculator = () => {
     updateCalc();
 };
 document.addEventListener('DOMContentLoaded', initCalculator);
+
+
+// Interactive Timeline Logic
+const initTimeline = () => {
+    const steps = document.querySelectorAll('.timeline-step');
+    if(steps.length === 0) return;
+
+    steps.forEach(step => {
+        step.addEventListener('click', () => {
+            // Close others
+            steps.forEach(s => {
+                if(s !== step) {
+                    s.classList.remove('active');
+                    s.querySelector('.step-details').style.display = 'none';
+                }
+            });
+            // Toggle current
+            if(step.classList.contains('active')){
+                step.classList.remove('active');
+                step.querySelector('.step-details').style.display = 'none';
+            } else {
+                step.classList.add('active');
+                step.querySelector('.step-details').style.display = 'block';
+            }
+        });
+    });
+};
+document.addEventListener('DOMContentLoaded', initTimeline);

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -101,39 +101,72 @@
         </div>
     </section>
 
-    <!-- Methodology Section -->
+    
+    <!-- Interactive Methodology Section -->
     <section class="benefits section bg-light">
         <div class="container">
             <div class="section-header center">
-                <h2>Our Methodology</h2>
+                <h2>Our <span class="text-gradient">Methodology</span></h2>
                 <div class="heading-line center"></div>
-                <p class="section-subtitle">Every engagement follows a battle-tested process designed to deliver maximum impact.</p>
+                <p class="section-subtitle">Every engagement follows a rigorous, military-grade testing process designed to deliver maximum impact. Click each phase to learn more.</p>
             </div>
-            <div class="benefits-layout">
-                <div class="benefit-item fade-up">
-                    <div class="benefit-icon" style="font-size:1.5rem; font-weight:800; color:var(--primary-color);">01</div>
-                    <div class="benefit-content">
-                        <h3>Scoping & Kickoff</h3>
-                        <p>We align on scope, threat models, rules of engagement, and testing timelines with your engineering team.</p>
+            
+            <div class="timeline-container fade-up">
+                
+                <div class="timeline-step active" data-step="1">
+                    <div class="step-marker">01</div>
+                    <div class="step-content">
+                        <h3>Scoping & Threat Modeling</h3>
+                        <div class="step-details" style="display: block;">
+                            <p>We work with your engineering team to define the attack surface, establish rules of engagement, and map out critical business logic to model potential adversarial paths before a single packet is sent.</p>
+                            <ul class="step-list">
+                                <li><i class="fa-solid fa-check text-primary"></i> Asset Discovery</li>
+                                <li><i class="fa-solid fa-check text-primary"></i> Architectural Review</li>
+                                <li><i class="fa-solid fa-check text-primary"></i> Threat Vector Mapping</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item fade-up">
-                    <div class="benefit-icon" style="font-size:1.5rem; font-weight:800; color:var(--primary-color);">02</div>
-                    <div class="benefit-content">
-                        <h3>Hacker-Led Assessment</h3>
-                        <p>Elite ethical hackers execute both automated and deep manual testing, focusing on business logic and architecture flaws.</p>
+
+                <div class="timeline-step" data-step="2">
+                    <div class="step-marker">02</div>
+                    <div class="step-content">
+                        <h3>Deep Reconnaissance</h3>
+                        <div class="step-details">
+                            <p>Our hackers enumerate your entire digital footprint. We look for forgotten API endpoints, exposed AWS S3 buckets, leaked GitHub credentials, and internal admin panels that automated scanners miss.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item fade-up">
-                    <div class="benefit-icon" style="font-size:1.5rem; font-weight:800; color:var(--primary-color);">03</div>
-                    <div class="benefit-content">
-                        <h3>Detailed Report & Retest</h3>
-                        <p>You receive a prioritized, developer-friendly report with exploit POCs, CVSS scores, and a free retest to verify fixes.</p>
+
+                <div class="timeline-step" data-step="3">
+                    <div class="step-marker">03</div>
+                    <div class="step-content">
+                        <h3>Manual Exploitation & Privilege Escalation</h3>
+                        <div class="step-details">
+                            <p>This is where real hacking happens. We execute complex, multi-stage attacks chaining low-level bugs into critical zero-days, bypassing WAFs and compromising business logic.</p>
+                            <ul class="step-list">
+                                <li><i class="fa-solid fa-check text-primary"></i> Zero-Day Discovery</li>
+                                <li><i class="fa-solid fa-check text-primary"></i> Authentication Bypass</li>
+                                <li><i class="fa-solid fa-check text-primary"></i> Remote Code Execution (RCE)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <div class="timeline-step" data-step="4">
+                    <div class="step-marker">04</div>
+                    <div class="step-content">
+                        <h3>Reporting & Remediation</h3>
+                        <div class="step-details">
+                            <p>You receive an auditor-ready, developer-friendly report containing exact exploit chains, CVSS scores, and step-by-step remediation guidance. We then perform a free re-test to verify your patches are solid.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
 
     <!-- CTA -->
     
@@ -243,6 +276,6 @@
         <button class="fab fab-top" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=11"></script>
 </body>
 </html>
