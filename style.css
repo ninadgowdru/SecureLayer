@@ -427,6 +427,8 @@ a {
 .section-header {
     margin-bottom: 64px;
     max-width: 800px;
+    text-align: center;
+    margin: 0 auto 64px;
 }
 
 .section-header.center {
@@ -439,7 +441,7 @@ a {
     height: 4px;
     background-color: var(--primary-color);
     border-radius: 2px;
-    margin-top: 16px;
+    margin: 16px auto 0;
 }
 
 .heading-line.center {
