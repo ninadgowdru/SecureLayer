@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    / SMOOTH SCROLLING
+    // ============================================
+    // SMOOTH SCROLLING
     // ============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
