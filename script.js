@@ -545,3 +545,59 @@ const initProfessionalMap = () => {
 document.addEventListener('DOMContentLoaded', () => {
     initProfessionalMap();
 });
+
+
+// Case Study Carousel Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    if (track) {
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentIndex = 0;
+
+        const updateSlider = () => {
+            const card = track.children[0];
+            const cardWidth = card.getBoundingClientRect().width;
+            const gap = parseFloat(window.getComputedStyle(track).gap) || 30;
+            
+            const moveAmount = currentIndex * (cardWidth + gap);
+            track.style.transform = `translateX(-${moveAmount}px)`;
+            
+            // Disable/Enable buttons
+            const cardsVisible = window.innerWidth > 1200 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+            const maxIndex = track.children.length - cardsVisible;
+            
+            if (currentIndex === 0) prevBtn.classList.add('disabled');
+            else prevBtn.classList.remove('disabled');
+            
+            if (currentIndex >= maxIndex) nextBtn.classList.add('disabled');
+            else nextBtn.classList.remove('disabled');
+        };
+
+        if (nextBtn && prevBtn) {
+            nextBtn.addEventListener('click', () => {
+                const cardsVisible = window.innerWidth > 1200 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+                const maxIndex = track.children.length - cardsVisible;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                }
+            });
+            
+            // Initial call to set button states
+            updateSlider();
+        }
+
+        window.addEventListener('resize', () => {
+            currentIndex = 0; // reset on resize
+            updateSlider();
+        });
+    }
+});

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=23">
+    <link rel="stylesheet" href="style.css?v=32">
 </head>
 <body>
 
@@ -49,93 +49,197 @@
         </div>
     </nav>
 
-    <!-- Inner Hero -->
-    <header class="inner-hero">
-        <div class="container">
-            <h1>Customer Success Stories</h1>
-            <p>See how leading enterprises use SecureLayer to fortify their applications and meet rigorous compliance standards.</p>
+        <!-- Inner Hero -->
+    <header class="inner-hero" style="padding-top: 140px; padding-bottom: 60px; text-align: center;">
+        <div class="container" style="max-width: 800px;">
+            <div style="display: inline-flex; align-items: center; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); padding: 6px 16px; border-radius: 20px; color: #3b82f6; font-weight: 600; font-size: 0.875rem; margin-bottom: 24px;">
+                <i class="fa-solid fa-star" style="margin-right: 8px;"></i> Customer Success
+            </div>
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px; color: #0f172a; line-height: 1.2;">Trusted by the world's most <span class="text-gradient">secure engineering teams.</span></h1>
+            <p style="color: #475569; font-size: 1.25rem; line-height: 1.6;">Discover how leading enterprises, FinTechs, and AI startups rely on SecureLayer's elite hackers to find critical vulnerabilities before adversaries do.</p>
         </div>
     </header>
 
-    <!-- Stats Banner -->
-    <section class="stats-section">
+    <!-- Trusted By Logo Cloud -->
+    <section class="logo-cloud-section" style="padding: 20px 0 60px 0;">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-count-item fade-up">
-                    <span class="count-number" data-target="500" data-suffix="+">0+</span>
-                    <span class="count-label">Pentests Completed</span>
+            <div class="logo-cloud" style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; align-items: center; opacity: 0.5; filter: grayscale(100%);">
+                <!-- Clean, minimalist font-icons to simulate enterprise partner logos -->
+                <div style="font-size: 2.2rem; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i class="fa-brands fa-aws"></i> AWS</div>
+                <div style="font-size: 2.2rem; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i class="fa-brands fa-docker"></i> Docker</div>
+                <div style="font-size: 2.2rem; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i class="fa-brands fa-stripe"></i> Stripe</div>
+                <div style="font-size: 2.2rem; font-weight: 700; display: flex; align-items: center; gap: 10px;"><i class="fa-brands fa-slack"></i> Slack</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep-Dive Case Studies Grid -->
+    <section class="testimonials section">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Proven <span class="text-gradient">Impact</span></h2>
+                <div class="heading-line center"></div>
+                <p class="section-subtitle">Read how our hacker-led approach solves complex security challenges across industries.</p>
+            </div>
+            
+            
+            
+            <div class="testimonial-marquee-wrapper">
+                <div class="testimonial-marquee-track">
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"SecureLayer pointed out a bunch of high and critical vulnerabilities, helping us meet our goals and making our APIs incredibly secure."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=68" alt="Sarah Jenkins"></div>
+                        <div class="author-info"><h4>Sarah Jenkins</h4><span>CTO, FinTech ScaleUp</span></div>
+                    </div>
                 </div>
-                <div class="stat-count-item fade-up">
-                    <span class="count-number" data-target="1200" data-suffix="+">0+</span>
-                    <span class="count-label">Critical Bugs Found</span>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"The depth of their architecture testing is unmatched. They integrated directly with our DevSecOps team and caught logic flaws before they hit production."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=33" alt="Marcus Torres"></div>
+                        <div class="author-info"><h4>Marcus Torres</h4><span>VP of Eng, HealthSync</span></div>
+                    </div>
                 </div>
-                <div class="stat-count-item fade-up">
-                    <span class="count-number" data-target="98" data-suffix="%">0%</span>
-                    <span class="count-label">Client Retention Rate</span>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Getting SOC2 compliant was a breeze thanks to SecureLayer's thorough VAPT reports. The auditors loved the detail and actionable steps."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=47" alt="Elena Rodriguez"></div>
+                        <div class="author-info"><h4>Elena Rodriguez</h4><span>CISO, CloudMatrix</span></div>
+                    </div>
                 </div>
-                <div class="stat-count-item fade-up">
-                    <span class="count-number" data-target="40" data-suffix="+">0+</span>
-                    <span class="count-label">Countries Served</span>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"We had a major release coming up and needed confidence in our security. SecureLayer delivered a thorough report with real POCs in just a week."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=12" alt="Raj Patel"></div>
+                        <div class="author-info"><h4>Raj Patel</h4><span>Head of Eng, PayNest</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Their AI security assessment uncovered prompt injection vulnerabilities in our product that our internal team missed entirely. In a different league."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=56" alt="Mei Lin"></div>
+                        <div class="author-info"><h4>Mei Lin</h4><span>CPO, Axiom AI</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Seamless collaboration, developer-friendly reports, and zero false positives. SecureLayer has become our go-to security partner."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=7" alt="Alex Morgan"></div>
+                        <div class="author-info"><h4>Alex Morgan</h4><span>CTO, Stackify</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"They found a critical zero-day in our withdrawal logic that automated scanners completely missed. Absolute lifesavers."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=11" alt="David Chen"></div>
+                        <div class="author-info"><h4>David Chen</h4><span>Founder, ChainVault</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Our engineering team loved working with SecureLayer. They don't just hand you a PDF, they actively help you fix the core architecture."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=42" alt="Jessica Alba"></div>
+                        <div class="author-info"><h4>Jessica Alba</h4><span>Director of Sec, NovaCloud</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"SecureLayer pointed out a bunch of high and critical vulnerabilities, helping us meet our goals and making our APIs incredibly secure."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=68" alt="Sarah Jenkins"></div>
+                        <div class="author-info"><h4>Sarah Jenkins</h4><span>CTO, FinTech ScaleUp</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"The depth of their architecture testing is unmatched. They integrated directly with our DevSecOps team and caught logic flaws before they hit production."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=33" alt="Marcus Torres"></div>
+                        <div class="author-info"><h4>Marcus Torres</h4><span>VP of Eng, HealthSync</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Getting SOC2 compliant was a breeze thanks to SecureLayer's thorough VAPT reports. The auditors loved the detail and actionable steps."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=47" alt="Elena Rodriguez"></div>
+                        <div class="author-info"><h4>Elena Rodriguez</h4><span>CISO, CloudMatrix</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"We had a major release coming up and needed confidence in our security. SecureLayer delivered a thorough report with real POCs in just a week."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=12" alt="Raj Patel"></div>
+                        <div class="author-info"><h4>Raj Patel</h4><span>Head of Eng, PayNest</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Their AI security assessment uncovered prompt injection vulnerabilities in our product that our internal team missed entirely. In a different league."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=56" alt="Mei Lin"></div>
+                        <div class="author-info"><h4>Mei Lin</h4><span>CPO, Axiom AI</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Seamless collaboration, developer-friendly reports, and zero false positives. SecureLayer has become our go-to security partner."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=7" alt="Alex Morgan"></div>
+                        <div class="author-info"><h4>Alex Morgan</h4><span>CTO, Stackify</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"They found a critical zero-day in our withdrawal logic that automated scanners completely missed. Absolute lifesavers."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=11" alt="David Chen"></div>
+                        <div class="author-info"><h4>David Chen</h4><span>Founder, ChainVault</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Our engineering team loved working with SecureLayer. They don't just hand you a PDF, they actively help you fix the core architecture."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=42" alt="Jessica Alba"></div>
+                        <div class="author-info"><h4>Jessica Alba</h4><span>Director of Sec, NovaCloud</span></div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Grid -->
-    <section class="testimonials section">
-        <div class="container">
-            <div class="section-header center">
-                <h2>What Our Customers Say</h2>
-                <div class="heading-line center"></div>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card fade-up">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p class="testimonial-text">"SecureLayer pointed out a bunch of high and critical vulnerabilities, helping us meet our goals and making our APIs incredibly secure. Their manual testing approach found things no scanner ever could."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=68" alt="Sarah J."></div>
-                        <div class="author-info"><h4>Sarah Jenkins</h4><span>CTO, FinTech ScaleUp</span></div>
-                    </div>
+            <!-- Global Impact Metrics -->
+    <section class="section animated-stats-section" style="position: relative; overflow: hidden; background: #ffffff; padding: 100px 0;">
+        <div class="stats-bg-glow light-glow"></div>
+        <div class="stats-bg-glow light-glow-2"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="stats-grid" style="border-top: none; padding-top: 0; grid-template-columns: repeat(3, 1fr);">
+                <div class="stat-count-item fade-up light-glass-card" style="padding: 40px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #60a5fa, #3b82f6);"></div>
+                    <span class="count-number text-gradient" style="font-size: 4rem; background-image: linear-gradient(90deg, #3b82f6, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #3b82f6;" data-target="24" data-suffix="+">0+</span>
+                    <span class="count-label" style="color: #475569; font-size: 1.1rem; margin-top: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Enterprise Pentests</span>
                 </div>
-                <div class="testimonial-card fade-up">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p class="testimonial-text">"The depth of their architecture testing is unmatched. They integrated directly with our DevSecOps team and caught logic flaws before they hit production. Highly recommended."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=33" alt="Marcus T."></div>
-                        <div class="author-info"><h4>Marcus Torres</h4><span>VP of Engineering, HealthSync</span></div>
-                    </div>
+                <div class="stat-count-item fade-up light-glass-card" style="padding: 40px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #60a5fa, #3b82f6);"></div>
+                    <span class="count-number text-gradient" style="font-size: 4rem; background-image: linear-gradient(90deg, #3b82f6, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #3b82f6;" data-target="140" data-suffix="+">0+</span>
+                    <span class="count-label" style="color: #475569; font-size: 1.1rem; margin-top: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Critical Vulns Patched</span>
                 </div>
-                <div class="testimonial-card fade-up">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p class="testimonial-text">"Getting SOC2 compliant was a breeze thanks to SecureLayer's thorough VAPT reports. The auditors loved the detail and actionable remediation steps."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=47" alt="Elena R."></div>
-                        <div class="author-info"><h4>Elena Rodriguez</h4><span>CISO, CloudMatrix</span></div>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-up">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p class="testimonial-text">"We had a major release coming up and needed confidence in our security posture. SecureLayer delivered a thorough report with real POCs in just a week. Absolutely world-class."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=12" alt="Raj P."></div>
-                        <div class="author-info"><h4>Raj Patel</h4><span>Head of Engineering, PayNest</span></div>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-up">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p class="testimonial-text">"Their AI security assessment uncovered prompt injection vulnerabilities in our product that our internal team missed entirely. SecureLayer is in a different league."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=56" alt="Mei L."></div>
-                        <div class="author-info"><h4>Mei Lin</h4><span>CPO, Axiom AI</span></div>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-up">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p class="testimonial-text">"Seamless collaboration, developer-friendly reports, and zero false positives. SecureLayer has become our go-to security partner for every product release."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=7" alt="Alex M."></div>
-                        <div class="author-info"><h4>Alex Morgan</h4><span>CTO, Stackify</span></div>
-                    </div>
+                <div class="stat-count-item fade-up light-glass-card" style="padding: 40px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #60a5fa, #3b82f6);"></div>
+                    <span class="count-number text-gradient" style="font-size: 4rem; background-image: linear-gradient(90deg, #3b82f6, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #3b82f6;" data-target="100" data-suffix="%">0%</span>
+                    <span class="count-label" style="color: #475569; font-size: 1.1rem; margin-top: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Client Retention Rate</span>
                 </div>
             </div>
         </div>
@@ -148,7 +252,7 @@
             <div class="glow-shape shape-2"></div>
         </div>
         <div class="container cta-container">
-            <h2>Join hundreds of security-conscious companies.</h2>
+            <h2>Join elite security-conscious companies.</h2>
             <p>Get your first assessment scoped and scheduled within 48 hours.</p>
             <a href="contact.html" class="btn btn-primary btn-large">Start Your Pentest</a>
         </div>
@@ -206,6 +310,6 @@
         <button class="fab fab-top" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
     </div>
 
-    <script src="script.js?v=20"></script>
+    <script src="script.js?v=31"></script>
 </body>
 </html>
