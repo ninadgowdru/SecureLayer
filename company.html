@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
 
@@ -126,6 +126,61 @@
         </div>
     </section>
 
+    
+    <!-- Global SOC Section -->
+    <section class="section" style="background: #0f172a; padding: 120px 0; overflow: hidden;">
+        <div class="container">
+            <div class="section-header center fade-up">
+                <h2 style="color: white;">Global <span class="text-gradient" style="background-image: linear-gradient(90deg, #60a5fa, #3b82f6); -webkit-background-clip: text;">Threat Operations</span></h2>
+                <div class="heading-line center" style="background-color: #3b82f6;"></div>
+                <p class="section-subtitle" style="color: #94a3b8;">Monitoring and responding to critical exploits across 40+ countries in real-time.</p>
+            </div>
+            
+            <div class="attack-map-wrapper fade-up">
+                <div class="map-stats">
+                    <div class="map-stat">
+                        <span class="stat-num text-gradient">2.4B</span>
+                        <span class="stat-lbl">Requests Analyzed / Mo</span>
+                    </div>
+                    <div class="map-stat">
+                        <span class="stat-num text-gradient">150+</span>
+                        <span class="stat-lbl">Zero-Days Discovered</span>
+                    </div>
+                    <div class="map-stat">
+                        <span class="stat-num text-gradient">24/7</span>
+                        <span class="stat-lbl">Global SOC Coverage</span>
+                    </div>
+                </div>
+
+                <div class="attack-map">
+                    <!-- World Map Outline using CSS/SVG -->
+                    <svg viewBox="0 0 1000 500" class="world-map">
+                        <path d="M150,150 Q170,120 200,140 T250,130 T300,150 T280,180 T200,200 Z" class="continent north-america"/>
+                        <path d="M220,220 Q250,250 280,300 T250,400 T200,380 T180,300 Z" class="continent south-america"/>
+                        <path d="M450,100 Q500,80 550,100 T600,120 T650,90 T700,120 T650,180 T550,200 T480,180 Z" class="continent eurasia"/>
+                        <path d="M480,200 Q520,230 550,300 T520,380 T480,350 T450,250 Z" class="continent africa"/>
+                        <path d="M750,300 Q800,280 850,320 T800,400 T720,350 Z" class="continent australia"/>
+                    </svg>
+                    
+                    <!-- Simulated Attacks -->
+                    <div class="attack-node" style="top: 150px; left: 200px;"></div>
+                    <div class="attack-node delay-1" style="top: 250px; left: 240px;"></div>
+                    <div class="attack-node delay-2" style="top: 130px; left: 520px;"></div>
+                    <div class="attack-node delay-3" style="top: 220px; left: 500px;"></div>
+                    <div class="attack-node delay-1" style="top: 140px; left: 650px;"></div>
+                    <div class="attack-node delay-2" style="top: 320px; left: 780px;"></div>
+                    
+                    <svg class="attack-lines">
+                        <line x1="200" y1="150" x2="520" y2="130" class="attack-line delay-1"/>
+                        <line x1="520" y1="130" x2="780" y2="320" class="attack-line delay-3"/>
+                        <line x1="240" y1="250" x2="650" y2="140" class="attack-line delay-2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Detailed Policies -->
     <section class="section">
         <div class="container" style="max-width: 800px;">
@@ -191,7 +246,6 @@
                     <h4>Resources</h4>
                     <a href="resources.html">Blog</a>
                     <a href="resources.html">Case Studies</a>
-                    <a href="resources.html">Security Guides</a>
                     <a href="resources.html">API Documentation</a>
                 </div>
                 <div class="footer-column">
@@ -220,6 +274,6 @@
         </button>
     </div>
 
-    <script src="script.js?v=11"></script>
+    <script src="script.js?v=13"></script>
 </body>
 </html>

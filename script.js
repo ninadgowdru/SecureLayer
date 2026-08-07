@@ -324,3 +324,104 @@ const initTimeline = () => {
     });
 };
 document.addEventListener('DOMContentLoaded', initTimeline);
+
+
+// Hacker Terminal Animation
+const initTerminal = () => {
+    const term = document.getElementById('hacker-terminal');
+    if(!term) return;
+
+    const sequence = [
+        { text: "nmap -sV -p- --script vuln target-api.com", type: "cmd", delay: 1000 },
+        { text: "Starting Nmap 7.93 ( https://nmap.org )", type: "info", delay: 800 },
+        { text: "PORT     STATE SERVICE VERSION", type: "text", delay: 400 },
+        { text: "443/tcp  open  ssl     nginx 1.18.0", type: "text", delay: 200 },
+        { text: "8080/tcp open  http    Node.js (Express)", type: "text", delay: 600 },
+        { text: "Host is up (0.015s latency).", type: "info", delay: 1000 },
+        { text: "python3 exploit_jwt_bypass.py --target https://target-api.com:8080/api/v1/", type: "cmd", delay: 2000 },
+        { text: "[*] Analyzing JWT signature algorithm...", type: "text", delay: 800 },
+        { text: "[!] Target accepts 'none' algorithm (CVE-2015-9256)", type: "term-error", delay: 1000 },
+        { text: "[*] Forging admin token...", type: "info", delay: 800 },
+        { text: "[+] Exploit Successful. Admin privileges granted.", type: "term-success", delay: 1000 },
+        { text: "dumping database schema...", type: "info", delay: 800 },
+        { text: "== TABLE: users (rows: 145,203) ==", type: "text", delay: 500 },
+        { text: "Mission accomplished. Generating remediation report.", type: "term-success", delay: 2000 }
+    ];
+
+    let currentLine = 0;
+    
+    const typeLine = () => {
+        if(currentLine >= sequence.length) {
+            // Loop it
+            setTimeout(() => {
+                term.innerHTML = '';
+                currentLine = 0;
+                typeLine();
+            }, 5000);
+            return;
+        }
+
+        const lineData = sequence[currentLine];
+        const lineDiv = document.createElement('div');
+        lineDiv.className = 'term-line';
+        
+        let prefix = '';
+        if(lineData.type === 'cmd') {
+            prefix = '<span class="term-prompt">root@securelayer:~#</span>';
+        }
+
+        let contentClass = '';
+        if(lineData.type !== 'cmd' && lineData.type !== 'text') {
+            contentClass = lineData.type;
+        } else if (lineData.type === 'cmd') {
+            contentClass = 'term-cmd';
+        }
+
+        term.innerHTML = term.innerHTML.replace('<span class="term-cursor"></span>', '');
+        
+        if(lineData.type === 'cmd') {
+            // Typewriter effect for commands
+            lineDiv.innerHTML = prefix + '<span class="' + contentClass + '"></span><span class="term-cursor"></span>';
+            term.appendChild(lineDiv);
+            
+            let i = 0;
+            const targetSpan = lineDiv.querySelector('.' + contentClass);
+            
+            const typeChar = () => {
+                if(i < lineData.text.length) {
+                    targetSpan.textContent += lineData.text.charAt(i);
+                    i++;
+                    setTimeout(typeChar, Math.random() * 50 + 30); // Random typing speed
+                } else {
+                    currentLine++;
+                    setTimeout(typeLine, lineData.delay);
+                }
+            };
+            typeChar();
+        } else {
+            // Instant print for output
+            lineDiv.innerHTML = '<span class="' + contentClass + '">' + lineData.text + '</span><span class="term-cursor"></span>';
+            term.appendChild(lineDiv);
+            currentLine++;
+            
+            // Auto scroll
+            term.scrollTop = term.scrollHeight;
+            setTimeout(typeLine, lineData.delay);
+        }
+    };
+
+    // Start it when it scrolls into view
+    const observer = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting) {
+            term.innerHTML = '<span class="term-cursor"></span>';
+            setTimeout(typeLine, 1000);
+            observer.disconnect();
+        }
+    });
+    
+    observer.observe(term);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTerminal();
+});

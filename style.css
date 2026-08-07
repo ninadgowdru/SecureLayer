@@ -1798,3 +1798,212 @@ a {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* HACKER TERMINAL */
+.terminal-container {
+    background: #0d1117;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.1);
+    overflow: hidden;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+.terminal-header {
+    background: #161b22;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+}
+.terminal-title {
+    color: #8b949e;
+    font-size: 0.875rem;
+    margin-left: 15px;
+    font-weight: 500;
+}
+.terminal-body {
+    padding: 24px;
+    color: #c9d1d9;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    height: 350px;
+    overflow-y: hidden;
+    position: relative;
+}
+.term-line {
+    margin-bottom: 4px;
+    display: block;
+}
+.term-prompt { color: #3fb950; font-weight: bold; margin-right: 8px; }
+.term-cmd { color: #f2cc60; }
+.term-success { color: #3fb950; font-weight: bold; }
+.term-error { color: #f85149; font-weight: bold; }
+.term-info { color: #58a6ff; }
+.term-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: #c9d1d9;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+
+/* THREAT LIBRARY */
+.threat-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.threat-card:hover {
+    transform: translateX(10px);
+    border-color: #cbd5e1;
+}
+.threat-header {
+    background: #f8fafc;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.threat-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #0f172a;
+}
+.cvss {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.cvss.critical { background: rgba(220, 38, 38, 0.1); color: #dc2626; border: 1px solid rgba(220, 38, 38, 0.2); }
+.cvss.high { background: rgba(249, 115, 22, 0.1); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.2); }
+
+.threat-body {
+    padding: 24px;
+    color: #475569;
+}
+.threat-body p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+.threat-body p:last-child {
+    margin-bottom: 0;
+}
+.threat-body strong {
+    color: #0f172a;
+}
+
+
+/* GLOBAL ATTACK MAP */
+.attack-map-wrapper {
+    background: #1e293b;
+    border-radius: 16px;
+    border: 1px solid #334155;
+    padding: 40px;
+    position: relative;
+}
+
+.map-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 30px;
+}
+
+.map-stat {
+    text-align: center;
+}
+
+.map-stat .stat-num {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.map-stat .stat-lbl {
+    color: #94a3b8;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.attack-map {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 400px;
+}
+
+.world-map {
+    width: 100%;
+    height: 100%;
+    fill: #334155;
+    opacity: 0.5;
+}
+
+.continent {
+    transition: fill 0.3s ease;
+}
+.continent:hover {
+    fill: #475569;
+}
+
+.attack-node {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ef4444;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    animation: radar-pulse 2s infinite;
+}
+
+.attack-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.attack-line {
+    stroke: #ef4444;
+    stroke-width: 2;
+    stroke-dasharray: 10, 10;
+    opacity: 0.5;
+    animation: dash-flow 2s linear infinite;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1.2s; }
+.delay-3 { animation-delay: 1.8s; }
+
+@keyframes radar-pulse {
+    0% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+    100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+@keyframes dash-flow {
+    to { stroke-dashoffset: -20; }
+}
+
+@media (max-width: 768px) {
+    .map-stats { flex-direction: column; gap: 20px; }
+    .attack-map { display: none; /* Hide complex SVG on mobile */ }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Library - SecureLayer</title>
+    <meta name="description" content="SecureLayer provides elite ethical hacker-led application security and pentesting for fast-scaling teams.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=14">
+</head>
+<body>
+
+    <!-- Mobile Nav Overlay + Drawer -->
+    <div class="nav-overlay"></div>
+    <div class="nav-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-links">
+            <a href="services.html">Services</a>
+            <a href="customers.html">Customers</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="blog.html">Blog</a>
+            <a href="company.html">Trust Center</a>
+        </div>
+        <div class="drawer-cta">
+            <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Speak to Sales</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="customers.html">Customers</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="company.html">Trust Center</a>
+            </div>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Speak to Sales</a>
+                <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Inner Hero -->
+    <header class="inner-hero">
+        <div class="container" style="text-align: center;">
+            <div style="display: inline-flex; align-items: center; background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.2); padding: 6px 16px; border-radius: 20px; color: #dc2626; font-weight: 600; font-size: 0.875rem; margin-bottom: 24px;">
+                <i class="fa-solid fa-bug" style="margin-right: 8px;"></i> Threat Intelligence
+            </div>
+            <h1 style="font-size: 3.5rem; margin-bottom: 24px;">The <span class="text-gradient">Threat Library</span></h1>
+            <p style="color: #64748b; font-size: 1.25rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                An encyclopedia of critical vulnerabilities. Learn how these exploits function in the wild and how SecureLayer engineers discover and remediate them.
+            </p>
+        </div>
+    </header>
+
+    <!-- Library Section -->
+    <section class="section">
+        <div class="container" style="max-width: 900px;">
+            
+            <div class="threat-card fade-up">
+                <div class="threat-header">
+                    <h3>Broken Access Control (BAC)</h3>
+                    <span class="cvss critical">Critical 9.1</span>
+                </div>
+                <div class="threat-body">
+                    <p><strong>What it is:</strong> When an application fails to properly enforce restrictions on what authenticated users are allowed to do. Attackers can view sensitive files, modify other users' data, or change access rights.</p>
+                    <p><strong>How SecureLayer Finds It:</strong> Automated scanners almost always miss BAC because they lack business logic context. Our engineers manually map user roles and manipulate API parameter IDs (IDOR) to bypass tenant isolation boundaries.</p>
+                </div>
+            </div>
+
+            <div class="threat-card fade-up">
+                <div class="threat-header">
+                    <h3>Server-Side Request Forgery (SSRF)</h3>
+                    <span class="cvss high">High 8.5</span>
+                </div>
+                <div class="threat-body">
+                    <p><strong>What it is:</strong> A vulnerability that allows an attacker to induce the server-side application to make HTTP requests to an arbitrary domain of the attacker's choosing. This is notoriously used to compromise AWS metadata endpoints (169.254.169.254) and steal IAM cloud credentials.</p>
+                    <p><strong>How SecureLayer Finds It:</strong> We identify endpoints that fetch external resources (like PDF generators or webhook handlers) and inject internal IP addresses or cloud metadata URLs to pivot into your internal network.</p>
+                </div>
+            </div>
+
+            <div class="threat-card fade-up">
+                <div class="threat-header">
+                    <h3>Remote Code Execution (RCE)</h3>
+                    <span class="cvss critical">Critical 10.0</span>
+                </div>
+                <div class="threat-body">
+                    <p><strong>What it is:</strong> The holy grail of hacking. An attacker can execute arbitrary operating system commands on the server running an application, leading to a complete system takeover.</p>
+                    <p><strong>How SecureLayer Finds It:</strong> We look for insecure deserialization, flawed file upload parsers, or vulnerable third-party dependencies (like Log4j). We then craft highly specific payloads to gain a reverse shell into the environment.</p>
+                </div>
+            </div>
+
+            <div class="threat-card fade-up">
+                <div class="threat-header">
+                    <h3>SQL Injection (SQLi)</h3>
+                    <span class="cvss high">High 8.8</span>
+                </div>
+                <div class="threat-body">
+                    <p><strong>What it is:</strong> Injection of malicious SQL queries via client input. It allows an attacker to view data they shouldn't, modify/delete data, or even escalate to RCE in certain database configurations.</p>
+                    <p><strong>How SecureLayer Finds It:</strong> While standard scanners test obvious parameters, we manually fuzz complex, nested JSON objects, GraphQL queries, and heavily filtered inputs using advanced time-based and blind SQLi techniques.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="cta-background">
+            <div class="glow-shape shape-1"></div>
+            <div class="glow-shape shape-2"></div>
+        </div>
+        <div class="container cta-container">
+            <h2>Don't Become a Case Study</h2>
+            <p>Our engineers find the vulnerabilities before the attackers do.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Request a Pentest</a>
+        </div>
+    </section>
+
+
+<!-- Footer -->
+
+    <footer id="company" class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+                <p>Elite hacker-led security assessments for the modern web.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html">Pentest as a Service</a>
+                    <a href="services.html">Product Security</a>
+                    <a href="services.html">AI & Logic Security</a>
+                    <a href="services.html">Red Teaming</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Use Cases</h4>
+                    <a href="#">SaaS Platforms</a>
+                    <a href="#">FinTech</a>
+                    <a href="#">Healthcare</a>
+                    <a href="#">Crypto & Web3</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="resources.html">Blog</a>
+                    <a href="resources.html">Case Studies</a>
+                    <a href="resources.html">API Documentation</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="company.html">Trust Center</a>
+                    
+                    <a href="#">Contact</a>
+                    <a href="#">Partners</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SecureLayer Inc. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <button class="fab fab-top" title="Back to top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <script src="script.js?v=13"></script>
+</body>
+</html>
