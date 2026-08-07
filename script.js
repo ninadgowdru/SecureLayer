@@ -425,3 +425,123 @@ const initTerminal = () => {
 document.addEventListener('DOMContentLoaded', () => {
     initTerminal();
 });
+
+
+// ============================================
+// PROFESSIONAL MAP ENGINE
+// ============================================
+const initProfessionalMap = () => {
+    const container = document.querySelector('.professional-map-container');
+    if (!container) return;
+
+    const blipsContainer = document.getElementById('radar-blips');
+    const vectorsSvg = document.querySelector('.attack-vectors');
+    const tooltip = document.getElementById('threat-tooltip');
+    
+    // Relative coordinates based on 2754x1398 SVG (Standard Equirectangular / Robinson rough coords)
+    // These are approximate X, Y percentages (0-100) for major tech hubs
+    const locations = [
+        { name: "New York", x: 28, y: 35 },
+        { name: "San Francisco", x: 18, y: 37 },
+        { name: "London", x: 48, y: 30 },
+        { name: "Frankfurt", x: 50, y: 31 },
+        { name: "Tokyo", x: 85, y: 36 },
+        { name: "Singapore", x: 78, y: 56 },
+        { name: "Sydney", x: 88, y: 78 },
+        { name: "Mumbai", x: 70, y: 48 },
+        { name: "São Paulo", x: 34, y: 65 }
+    ];
+
+    const attackTypes = [
+        "SQL Injection", "RCE Attempt", "API Fuzzing", "DDoS Node", 
+        "Data Exfil", "Zero-Day Exploit", "Auth Bypass"
+    ];
+
+    const spawnThreat = () => {
+        if (!container.offsetParent) return; // Don't run if hidden
+        
+        // Pick origin and target
+        const origin = locations[Math.floor(Math.random() * locations.length)];
+        let target = locations[Math.floor(Math.random() * locations.length)];
+        while(target.name === origin.name) {
+            target = locations[Math.floor(Math.random() * locations.length)];
+        }
+        
+        const attackType = attackTypes[Math.floor(Math.random() * attackTypes.length)];
+        
+        // 1. Create origin blip (red)
+        const originBlip = document.createElement('div');
+        originBlip.className = 'radar-blip';
+        originBlip.style.left = origin.x + '%';
+        originBlip.style.top = origin.y + '%';
+        const originRing = document.createElement('div');
+        originRing.className = 'radar-ring';
+        originBlip.appendChild(originRing);
+        blipsContainer.appendChild(originBlip);
+
+        // 2. Create target blip (blue)
+        const targetBlip = document.createElement('div');
+        targetBlip.className = 'radar-blip blue';
+        targetBlip.style.left = target.x + '%';
+        targetBlip.style.top = target.y + '%';
+        const targetRing = document.createElement('div');
+        targetRing.className = 'radar-ring';
+        targetBlip.appendChild(targetRing);
+        blipsContainer.appendChild(targetBlip);
+
+        // 3. Draw curved SVG line (Vector)
+        // SVG viewBox is 2754 x 1398. We map percentages to these coordinates.
+        const svgW = 2754;
+        const svgH = 1398;
+        const ox = (origin.x / 100) * svgW;
+        const oy = (origin.y / 100) * svgH;
+        const tx = (target.x / 100) * svgW;
+        const ty = (target.y / 100) * svgH;
+        
+        // Control point for a nice curve
+        const cx = (ox + tx) / 2;
+        const cy = Math.min(oy, ty) - 200; // Curve upwards
+        
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", `M${ox},${oy} Q${cx},${cy} ${tx},${ty}`);
+        path.setAttribute("class", "attack-vector");
+        
+        // Calculate path length for animation
+        vectorsSvg.appendChild(path);
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+
+        // 4. Show Tooltip
+        document.getElementById('tt-origin').textContent = origin.name;
+        document.getElementById('tt-target').textContent = target.name;
+        document.getElementById('tt-type').textContent = attackType;
+        tooltip.classList.add('show');
+
+        // Cleanup after 4 seconds
+        setTimeout(() => {
+            if(originBlip.parentNode) originBlip.parentNode.removeChild(originBlip);
+            if(targetBlip.parentNode) targetBlip.parentNode.removeChild(targetBlip);
+            if(path.parentNode) path.parentNode.removeChild(path);
+            tooltip.classList.remove('show');
+        }, 4000);
+    };
+
+    // Spawn a threat every 3 to 6 seconds
+    const scheduleNext = () => {
+        setTimeout(() => {
+            spawnThreat();
+            scheduleNext();
+        }, Math.random() * 3000 + 3000);
+    };
+    
+    // Initial spawn
+    setTimeout(() => {
+        spawnThreat();
+        scheduleNext();
+    }, 1000);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    initProfessionalMap();
+});

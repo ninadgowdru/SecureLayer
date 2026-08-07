@@ -1917,9 +1917,6 @@ a {
 .map-stats {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #334155;
-    padding-bottom: 30px;
 }
 
 .map-stat {
@@ -2007,4 +2004,131 @@ a {
 @media (max-width: 768px) {
     .map-stats { flex-direction: column; gap: 20px; }
     .attack-map { display: none; /* Hide complex SVG on mobile */ }
+}
+
+
+/* PROFESSIONAL SVG MAP STYLES */
+.realistic-world-map {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.1));
+}
+.realistic-world-map path {
+    fill: #1e293b;
+    stroke: #334155;
+    stroke-width: 0.5px;
+    transition: fill 0.3s;
+}
+.realistic-world-map path:hover {
+    fill: #334155;
+}
+
+#radar-blips {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.radar-blip {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ef4444;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #ef4444, 0 0 20px #ef4444;
+    animation: blip-pulse 2s infinite;
+    z-index: 20;
+}
+
+.radar-blip.blue {
+    background: #3b82f6;
+    box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6;
+}
+
+.radar-ring {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ef4444;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: radar-ring-anim 2s infinite ease-out;
+}
+.radar-blip.blue .radar-ring { border-color: #3b82f6; }
+
+@keyframes blip-pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes radar-ring-anim {
+    0% { width: 12px; height: 12px; opacity: 1; border-width: 2px; }
+    100% { width: 60px; height: 60px; opacity: 0; border-width: 0px; }
+}
+
+.attack-vector {
+    fill: none;
+    stroke: #ef4444;
+    stroke-width: 2;
+    stroke-linecap: round;
+    opacity: 0.6;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash-draw 1.5s forwards ease-in-out, fade-out 2s forwards 2s;
+}
+
+@keyframes dash-draw {
+    to { stroke-dashoffset: 0; }
+}
+@keyframes fade-out {
+    to { opacity: 0; }
+}
+
+.threat-tooltip {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 16px;
+    width: 240px;
+    color: white;
+    font-size: 0.85rem;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    z-index: 30;
+}
+.threat-tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.tt-header {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ef4444;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 8px;
+}
+.tt-body div { margin-bottom: 6px; }
+.tt-label { color: #94a3b8; }
+.tt-val { color: #f8fafc; font-family: monospace; float: right; }
+.tt-status {
+    margin-top: 12px;
+    font-weight: 700;
+    text-align: center;
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    padding: 4px;
+    border-radius: 4px;
 }
