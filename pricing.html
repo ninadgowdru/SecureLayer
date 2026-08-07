@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
             <a href="customers.html">Customers</a>
             <a href="pricing.html">Pricing</a>
             <a href="blog.html">Blog</a>
-            <a href="company.html">Company</a>
+            <a href="company.html">Trust Center</a>
         </div>
         <div class="drawer-cta">
             <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Speak to Sales</a>
@@ -40,7 +40,7 @@
                 <a href="customers.html">Customers</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-                <a href="company.html">Company</a>
+                <a href="company.html">Trust Center</a>
             </div>
             <div class="nav-actions">
                 <a href="contact.html" class="btn btn-primary">Speak to Sales</a>
@@ -158,6 +158,69 @@
     </section>
 
     <!-- CTA -->
+    
+    <!-- ROI Calculator Section -->
+    <section class="section" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="section-header center fade-up">
+                <h2>The Cost of <span class="text-gradient">Inaction</span></h2>
+                <div class="heading-line center"></div>
+                <p class="section-subtitle">Calculate the potential financial impact of a data breach versus the cost of a SecureLayer assessment.</p>
+            </div>
+            
+            <div class="calculator-container fade-up">
+                <div class="calc-inputs">
+                    <h3>Configure Your Profile</h3>
+                    
+                    <div class="calc-group">
+                        <label>Industry</label>
+                        <select id="calc-industry">
+                            <option value="1.5">Healthcare (Highly Regulated)</option>
+                            <option value="1.4">Financial Services</option>
+                            <option value="1.2">Technology / SaaS</option>
+                            <option value="1.0">E-Commerce / Retail</option>
+                            <option value="0.8">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-group">
+                        <label>Company Size (Employees)</label>
+                        <input type="range" id="calc-size" min="10" max="5000" value="250">
+                        <div class="range-val"><span id="size-val">250</span> Employees</div>
+                    </div>
+
+                    <div class="calc-group">
+                        <label>Cloud Infrastructure Dependency</label>
+                        <input type="range" id="calc-cloud" min="1" max="10" value="7">
+                        <div class="range-val">Level <span id="cloud-val">7</span> / 10</div>
+                    </div>
+                </div>
+
+                <div class="calc-outputs">
+                    <h3>Estimated Risk Profile</h3>
+                    
+                    <div class="output-card risk">
+                        <div class="output-label">Estimated Cost of a Data Breach</div>
+                        <div class="output-val" id="out-breach">$0</div>
+                        <div class="output-sub">Includes regulatory fines, lost business, and incident response.</div>
+                    </div>
+
+                    <div class="output-card investment">
+                        <div class="output-label">Avg. SecureLayer PTaaS Investment</div>
+                        <div class="output-val" id="out-investment">$0</div>
+                        <div class="output-sub">A fraction of the cost. Infinite peace of mind.</div>
+                    </div>
+
+                    <div class="roi-metric">
+                        Estimated ROI: <span id="out-roi" class="text-gradient">0x</span>
+                    </div>
+                    
+                    <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px;">Secure Your Infrastructure</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta section">
         <div class="cta-background">
             <div class="glow-shape shape-1"></div>
@@ -203,8 +266,8 @@
                 </div>
                 <div class="footer-column">
                     <h4>Company</h4>
-                    <a href="company.html">About Us</a>
-                    <a href="company.html">Careers</a>
+                    <a href="company.html">Trust Center</a>
+                    
                     <a href="#">Partners</a>
                 </div>
             </div>

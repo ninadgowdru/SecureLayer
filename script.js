@@ -250,3 +250,49 @@ const initAttackSurface = () => {
     });
 };
 document.addEventListener('DOMContentLoaded', initAttackSurface);
+
+
+// ROI Calculator Logic
+const initCalculator = () => {
+    const ind = document.getElementById('calc-industry');
+    const size = document.getElementById('calc-size');
+    const cloud = document.getElementById('calc-cloud');
+    
+    if(!ind || !size || !cloud) return;
+
+    const outBreach = document.getElementById('out-breach');
+    const outInv = document.getElementById('out-investment');
+    const outRoi = document.getElementById('out-roi');
+    
+    const sizeVal = document.getElementById('size-val');
+    const cloudVal = document.getElementById('cloud-val');
+
+    const updateCalc = () => {
+        sizeVal.innerText = size.value;
+        cloudVal.innerText = cloud.value;
+
+        // Base cost assumptions (purely for demonstration/marketing purposes)
+        const baseCostPerEmployee = 5000;
+        const industryMultiplier = parseFloat(ind.value);
+        const cloudMultiplier = parseFloat(cloud.value) * 0.1 + 0.5; // Scale 0.6 to 1.5
+
+        const estimatedBreachCost = parseInt(size.value) * baseCostPerEmployee * industryMultiplier * cloudMultiplier;
+        
+        // Investment scales slightly with company size but is fundamentally capped
+        let estimatedInvestment = 15000 + (parseInt(size.value) * 5);
+        if(estimatedInvestment > 75000) estimatedInvestment = 75000;
+
+        const roi = (estimatedBreachCost / estimatedInvestment).toFixed(0);
+
+        outBreach.innerText = '$' + estimatedBreachCost.toLocaleString();
+        outInv.innerText = '$' + estimatedInvestment.toLocaleString();
+        outRoi.innerText = roi + 'x';
+    };
+
+    ind.addEventListener('change', updateCalc);
+    size.addEventListener('input', updateCalc);
+    cloud.addEventListener('input', updateCalc);
+    
+    updateCalc();
+};
+document.addEventListener('DOMContentLoaded', initCalculator);
