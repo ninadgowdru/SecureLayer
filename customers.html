@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customers - SecureLayer</title>
+    <meta name="description" content="See how leading enterprises use SecureLayer to fortify their applications and meet compliance standards.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
+
+    <!-- Mobile Nav Overlay + Drawer -->
+    <div class="nav-overlay"></div>
+    <div class="nav-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo"><i class="fa-solid fa-shield-halved"></i> SecureLayer</a>
+            <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-links">
+            <a href="services.html">Services</a>
+            <a href="customers.html">Customers</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="resources.html">Resources</a>
+            <a href="company.html">Company</a>
+        </div>
+        <div class="drawer-cta">
+            <a href="#" class="btn btn-primary open-modal" style="width:100%; justify-content:center;">Speak to Sales</a>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <i class="fa-solid fa-shield-halved"></i>
-                SecureLayer
-            </a>
+            <a href="index.html" class="logo"><i class="fa-solid fa-shield-halved"></i> SecureLayer</a>
             <div class="nav-links">
                 <a href="services.html">Services</a>
                 <a href="customers.html">Customers</a>
@@ -24,7 +43,7 @@
                 <a href="company.html">Company</a>
             </div>
             <div class="nav-actions">
-                <a href="#contact" class="btn btn-primary">Speak to Sales</a>
+                <a href="#" class="btn btn-primary open-modal">Speak to Sales</a>
                 <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
@@ -32,33 +51,106 @@
 
     <!-- Inner Hero -->
     <header class="inner-hero">
-        <div class="container center">
+        <div class="container">
             <h1>Customer Success Stories</h1>
-            <p style="margin: 0 auto; text-align: center;">See how leading enterprises use SecureLayer to fortify their applications and meet rigorous compliance standards.</p>
+            <p>See how leading enterprises use SecureLayer to fortify their applications and meet rigorous compliance standards.</p>
         </div>
     </header>
 
-    <!-- Customers Grid (Reusing Testimonial Grid) -->
+    <!-- Stats Banner -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-count-item fade-up">
+                    <span class="count-number" data-target="500" data-suffix="+">0+</span>
+                    <span class="count-label">Pentests Completed</span>
+                </div>
+                <div class="stat-count-item fade-up">
+                    <span class="count-number" data-target="1200" data-suffix="+">0+</span>
+                    <span class="count-label">Critical Bugs Found</span>
+                </div>
+                <div class="stat-count-item fade-up">
+                    <span class="count-number" data-target="98" data-suffix="%">0%</span>
+                    <span class="count-label">Client Retention Rate</span>
+                </div>
+                <div class="stat-count-item fade-up">
+                    <span class="count-number" data-target="40" data-suffix="+">0+</span>
+                    <span class="count-label">Countries Served</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Grid -->
     <section class="testimonials section">
         <div class="container">
+            <div class="section-header center">
+                <h2>What Our Customers Say</h2>
+                <div class="heading-line center"></div>
+            </div>
             <div class="testimonial-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-up">
                     <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p class="testimonial-text">"SecureLayer pointed out a bunch of high and critical vulnerabilities, helping us meet our goals and making our APIs incredibly secure."</p>
+                    <p class="testimonial-text">"SecureLayer pointed out a bunch of high and critical vulnerabilities, helping us meet our goals and making our APIs incredibly secure. Their manual testing approach found things no scanner ever could."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=68" alt="Sarah J."></div>
                         <div class="author-info"><h4>Sarah Jenkins</h4><span>CTO, FinTech ScaleUp</span></div>
                     </div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-up">
                     <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p class="testimonial-text">"The depth of their architecture testing is unmatched. They caught logic flaws before they hit production."</p>
+                    <p class="testimonial-text">"The depth of their architecture testing is unmatched. They integrated directly with our DevSecOps team and caught logic flaws before they hit production. Highly recommended."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=33" alt="Marcus T."></div>
                         <div class="author-info"><h4>Marcus Torres</h4><span>VP of Engineering, HealthSync</span></div>
                     </div>
                 </div>
+                <div class="testimonial-card fade-up">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Getting SOC2 compliant was a breeze thanks to SecureLayer's thorough VAPT reports. The auditors loved the detail and actionable remediation steps."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=47" alt="Elena R."></div>
+                        <div class="author-info"><h4>Elena Rodriguez</h4><span>CISO, CloudMatrix</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"We had a major release coming up and needed confidence in our security posture. SecureLayer delivered a thorough report with real POCs in just a week. Absolutely world-class."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=12" alt="Raj P."></div>
+                        <div class="author-info"><h4>Raj Patel</h4><span>Head of Engineering, PayNest</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Their AI security assessment uncovered prompt injection vulnerabilities in our product that our internal team missed entirely. SecureLayer is in a different league."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=56" alt="Mei L."></div>
+                        <div class="author-info"><h4>Mei Lin</h4><span>CPO, Axiom AI</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Seamless collaboration, developer-friendly reports, and zero false positives. SecureLayer has become our go-to security partner for every product release."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://i.pravatar.cc/150?img=7" alt="Alex M."></div>
+                        <div class="author-info"><h4>Alex Morgan</h4><span>CTO, Stackify</span></div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta section">
+        <div class="cta-background">
+            <div class="glow-shape shape-1"></div>
+            <div class="glow-shape shape-2"></div>
+        </div>
+        <div class="container cta-container">
+            <h2>Join hundreds of security-conscious companies.</h2>
+            <p>Get your first assessment scoped and scheduled within 48 hours.</p>
+            <a href="#" class="btn btn-primary btn-large open-modal">Start Your Pentest</a>
         </div>
     </section>
 
@@ -66,17 +158,55 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <a href="index.html" class="logo footer-logo">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    SecureLayer
-                </a>
+                <a href="index.html" class="logo footer-logo"><i class="fa-solid fa-shield-halved"></i> SecureLayer</a>
                 <p>Elite hacker-led security assessments for the modern web.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html">Pentest as a Service</a>
+                    <a href="services.html">Product Security</a>
+                    <a href="services.html">AI & Logic Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Use Cases</h4>
+                    <a href="#">SaaS Platforms</a>
+                    <a href="#">FinTech</a>
+                    <a href="#">Healthcare</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="resources.html">Blog</a>
+                    <a href="resources.html">Case Studies</a>
+                    <a href="resources.html">Security Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="company.html">About Us</a>
+                    <a href="company.html">Careers</a>
+                    <a href="#">Partners</a>
+                </div>
             </div>
         </div>
         <div class="container footer-bottom">
             <p>&copy; 2026 SecureLayer Inc. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <button class="fab fab-top" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

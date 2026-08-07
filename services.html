@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - SecureLayer</title>
+    <meta name="description" content="SecureLayer's elite pentesting and application security services for web, mobile, APIs, and AI systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
+
+    <!-- Mobile Nav Overlay + Drawer -->
+    <div class="nav-overlay"></div>
+    <div class="nav-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo"><i class="fa-solid fa-shield-halved"></i> SecureLayer</a>
+            <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-links">
+            <a href="services.html">Services</a>
+            <a href="customers.html">Customers</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="resources.html">Resources</a>
+            <a href="company.html">Company</a>
+        </div>
+        <div class="drawer-cta">
+            <a href="#" class="btn btn-primary open-modal" style="width:100%; justify-content:center;">Speak to Sales</a>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <i class="fa-solid fa-shield-halved"></i>
-                SecureLayer
-            </a>
+            <a href="index.html" class="logo"><i class="fa-solid fa-shield-halved"></i> SecureLayer</a>
             <div class="nav-links">
                 <a href="services.html">Services</a>
                 <a href="customers.html">Customers</a>
@@ -24,7 +43,7 @@
                 <a href="company.html">Company</a>
             </div>
             <div class="nav-actions">
-                <a href="#contact" class="btn btn-primary">Speak to Sales</a>
+                <a href="#" class="btn btn-primary open-modal">Speak to Sales</a>
                 <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
@@ -32,32 +51,100 @@
 
     <!-- Inner Hero -->
     <header class="inner-hero">
-        <div class="container center">
+        <div class="container">
             <h1>Our Security Services</h1>
-            <p style="margin: 0 auto; text-align: center;">Comprehensive manual assessments and integrated security pipelines designed to find critical vulnerabilities before attackers do.</p>
+            <p>Comprehensive manual assessments and integrated security pipelines designed to find critical vulnerabilities before attackers do.</p>
         </div>
     </header>
 
-    <!-- Services Grid (Reused from index) -->
+    <!-- Services Detail Grid -->
     <section class="services section">
         <div class="container">
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card fade-up">
                     <div class="icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div>
                     <h3>Pentest as a Service (PTaaS)</h3>
                     <p>Enhance your defenses with hacker-focused Penetration Testing. Comprehensive manual assessments for Web, Mobile, and APIs.</p>
+                    <a href="#" class="card-link open-modal">Get Started <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-up">
                     <div class="icon-wrapper"><i class="fa-solid fa-infinity"></i></div>
-                    <h3>Product Security</h3>
+                    <h3>Product Security as a Service</h3>
                     <p>Continuous hacker-focused security integrated directly into your DevSecOps pipeline and release cycles.</p>
+                    <a href="#" class="card-link open-modal">Get Started <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-up">
                     <div class="icon-wrapper"><i class="fa-solid fa-brain"></i></div>
                     <h3>AI & Logic Security</h3>
                     <p>Safeguard your complex workflows, LLMs, and business logic against real-world, non-trivial cyber attacks.</p>
+                    <a href="#" class="card-link open-modal">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="icon-wrapper"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>Mobile Application Testing</h3>
+                    <p>Deep analysis of iOS and Android apps — from client-side storage risks to insecure API communication and reverse engineering threats.</p>
+                    <a href="#" class="card-link open-modal">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="icon-wrapper"><i class="fa-solid fa-cloud"></i></div>
+                    <h3>Cloud Security Review</h3>
+                    <p>Audit your AWS, GCP, or Azure infrastructure for misconfigurations, over-privileged roles, and exposed storage buckets.</p>
+                    <a href="#" class="card-link open-modal">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="icon-wrapper"><i class="fa-solid fa-user-secret"></i></div>
+                    <h3>Red Team Operations</h3>
+                    <p>Full-scope adversarial simulations that replicate advanced persistent threats to test your detection and response capabilities.</p>
+                    <a href="#" class="card-link open-modal">Get Started <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="benefits section bg-light">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Our Methodology</h2>
+                <div class="heading-line center"></div>
+                <p class="section-subtitle">Every engagement follows a battle-tested process designed to deliver maximum impact.</p>
+            </div>
+            <div class="benefits-layout">
+                <div class="benefit-item fade-up">
+                    <div class="benefit-icon" style="font-size:1.5rem; font-weight:800; color:var(--primary-color);">01</div>
+                    <div class="benefit-content">
+                        <h3>Scoping & Kickoff</h3>
+                        <p>We align on scope, threat models, rules of engagement, and testing timelines with your engineering team.</p>
+                    </div>
+                </div>
+                <div class="benefit-item fade-up">
+                    <div class="benefit-icon" style="font-size:1.5rem; font-weight:800; color:var(--primary-color);">02</div>
+                    <div class="benefit-content">
+                        <h3>Hacker-Led Assessment</h3>
+                        <p>Elite ethical hackers execute both automated and deep manual testing, focusing on business logic and architecture flaws.</p>
+                    </div>
+                </div>
+                <div class="benefit-item fade-up">
+                    <div class="benefit-icon" style="font-size:1.5rem; font-weight:800; color:var(--primary-color);">03</div>
+                    <div class="benefit-content">
+                        <h3>Detailed Report & Retest</h3>
+                        <p>You receive a prioritized, developer-friendly report with exploit POCs, CVSS scores, and a free retest to verify fixes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta section">
+        <div class="cta-background">
+            <div class="glow-shape shape-1"></div>
+            <div class="glow-shape shape-2"></div>
+        </div>
+        <div class="container cta-container">
+            <h2>Ready to start your security assessment?</h2>
+            <p>Talk to our team to scope your first engagement.</p>
+            <a href="#" class="btn btn-primary btn-large open-modal">Schedule A Call Now</a>
         </div>
     </section>
 
@@ -65,24 +152,57 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <a href="index.html" class="logo footer-logo">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    SecureLayer
-                </a>
+                <a href="index.html" class="logo footer-logo"><i class="fa-solid fa-shield-halved"></i> SecureLayer</a>
                 <p>Elite hacker-led security assessments for the modern web.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
             </div>
             <div class="footer-links-group">
                 <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html">Pentest as a Service</a>
+                    <a href="services.html">Product Security</a>
+                    <a href="services.html">AI & Logic Security</a>
+                    <a href="services.html">Red Teaming</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Use Cases</h4>
+                    <a href="#">SaaS Platforms</a>
+                    <a href="#">FinTech</a>
+                    <a href="#">Healthcare</a>
+                    <a href="#">Crypto & Web3</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="resources.html">Blog</a>
+                    <a href="resources.html">Case Studies</a>
+                    <a href="resources.html">Security Guides</a>
+                </div>
+                <div class="footer-column">
                     <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="careers.html">Careers</a>
+                    <a href="company.html">About Us</a>
+                    <a href="company.html">Careers</a>
+                    <a href="#">Partners</a>
                 </div>
             </div>
         </div>
         <div class="container footer-bottom">
             <p>&copy; 2026 SecureLayer Inc. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <button class="fab fab-top" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

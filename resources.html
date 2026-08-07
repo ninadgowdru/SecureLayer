@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - SecureLayer</title>
+    <meta name="description" content="Security blog, guides, whitepapers and case studies from SecureLayer's elite hacking team.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
+
+    <!-- Mobile Nav Overlay + Drawer -->
+    <div class="nav-overlay"></div>
+    <div class="nav-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo"><i class="fa-solid fa-shield-halved"></i> SecureLayer</a>
+            <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-links">
+            <a href="services.html">Services</a>
+            <a href="customers.html">Customers</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="resources.html">Resources</a>
+            <a href="company.html">Company</a>
+        </div>
+        <div class="drawer-cta">
+            <a href="#" class="btn btn-primary open-modal" style="width:100%; justify-content:center;">Speak to Sales</a>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <i class="fa-solid fa-shield-halved"></i>
-                SecureLayer
-            </a>
+            <a href="index.html" class="logo"><i class="fa-solid fa-shield-halved"></i> SecureLayer</a>
             <div class="nav-links">
                 <a href="services.html">Services</a>
                 <a href="customers.html">Customers</a>
@@ -24,7 +43,7 @@
                 <a href="company.html">Company</a>
             </div>
             <div class="nav-actions">
-                <a href="#contact" class="btn btn-primary">Speak to Sales</a>
+                <a href="#" class="btn btn-primary open-modal">Speak to Sales</a>
                 <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
@@ -32,41 +51,142 @@
 
     <!-- Inner Hero -->
     <header class="inner-hero">
-        <div class="container center">
+        <div class="container">
             <h1>Security Resources & Blog</h1>
-            <p style="margin: 0 auto; text-align: center;">Deep dives into modern vulnerabilities, compliance guides, and security research.</p>
+            <p>Deep dives into modern vulnerabilities, compliance guides, and security research from our elite hacking team.</p>
         </div>
     </header>
 
-    <!-- Resources Grid -->
+    <!-- Filter Tabs + Resources Grid -->
     <section class="section">
         <div class="container">
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="blog">Blog</button>
+                <button class="filter-tab" data-filter="whitepaper">Whitepapers</button>
+                <button class="filter-tab" data-filter="guide">Guides</button>
+                <button class="filter-tab" data-filter="case-study">Case Studies</button>
+            </div>
+
+            <!-- Resources Grid -->
             <div class="resources-grid">
-                <div class="resource-card">
+
+                <!-- Featured Article -->
+                <div class="resource-card resource-card-featured fade-up" data-category="blog">
+                    <div class="resource-image" style="background: linear-gradient(135deg, #0a192f 0%, #0066ff22 100%);">
+                        <i class="fa-solid fa-shield-virus" style="color: var(--primary-color); opacity:0.8;"></i>
+                    </div>
+                    <div class="resource-content" style="padding: 40px; display:flex; flex-direction:column; justify-content:center;">
+                        <span class="badge">Featured · Blog</span>
+                        <h3 style="font-size:1.75rem; margin-bottom:16px;">Bypassing 2FA with Response Manipulation: A Real-World Case Study</h3>
+                        <p style="margin-bottom:24px;">A technical deep-dive into how our team bypassed two-factor authentication on a major FinTech platform using server response manipulation — without touching the OTP.</p>
+                        <a href="#" class="card-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 1 -->
+                <div class="resource-card fade-up" data-category="whitepaper">
                     <div class="resource-image"><i class="fa-solid fa-file-pdf"></i></div>
                     <div class="resource-content">
                         <span class="badge">Whitepaper</span>
                         <h3>The 2026 Guide to API Security</h3>
-                        <p>Learn how to hunt for logic flaws in complex microservices.</p>
+                        <p>Learn how to hunt for logic flaws in complex microservices architectures.</p>
+                        <a href="#" class="card-link" style="margin-top:16px; display:inline-flex; gap:6px;">Download <i class="fa-solid fa-download"></i></a>
                     </div>
                 </div>
-                <div class="resource-card">
-                    <div class="resource-image"><i class="fa-solid fa-book"></i></div>
+
+                <!-- Card 2 -->
+                <div class="resource-card fade-up" data-category="guide">
+                    <div class="resource-image"><i class="fa-solid fa-book-open-reader"></i></div>
                     <div class="resource-content">
                         <span class="badge">Guide</span>
                         <h3>Passing SOC2 Without the Stress</h3>
-                        <p>How to use our PTaaS platform to automate auditor evidence gathering.</p>
+                        <p>Use our PTaaS platform to automate evidence gathering for your next audit.</p>
+                        <a href="#" class="card-link" style="margin-top:16px; display:inline-flex; gap:6px;">Read Guide <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="resource-card">
-                    <div class="resource-image"><i class="fa-brands fa-medium"></i></div>
+
+                <!-- Card 3 -->
+                <div class="resource-card fade-up" data-category="blog">
+                    <div class="resource-image"><i class="fa-solid fa-terminal"></i></div>
                     <div class="resource-content">
                         <span class="badge">Blog</span>
-                        <h3>Bypassing 2FA with Response Manipulation</h3>
-                        <p>A technical writeup from our elite hacking team.</p>
+                        <h3>Top 10 API Vulnerabilities Found in 2025</h3>
+                        <p>Our researchers analyzed 200+ pentests to find the most common exploitable API flaws.</p>
+                        <a href="#" class="card-link" style="margin-top:16px; display:inline-flex; gap:6px;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
+
+                <!-- Card 4 -->
+                <div class="resource-card fade-up" data-category="case-study">
+                    <div class="resource-image"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="resource-content">
+                        <span class="badge">Case Study</span>
+                        <h3>How HealthSync Achieved ISO 27001 in 60 Days</h3>
+                        <p>A complete walkthrough of how we helped a healthcare SaaS pass their compliance audit.</p>
+                        <a href="#" class="card-link" style="margin-top:16px; display:inline-flex; gap:6px;">Read Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="resource-card fade-up" data-category="guide">
+                    <div class="resource-image"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="resource-content">
+                        <span class="badge">Guide</span>
+                        <h3>Secure Your LLM: The AI Red Teaming Playbook</h3>
+                        <p>How to probe your AI-powered products for prompt injection, jailbreaks, and data leakage.</p>
+                        <a href="#" class="card-link" style="margin-top:16px; display:inline-flex; gap:6px;">Read Guide <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="resource-card fade-up" data-category="blog">
+                    <div class="resource-image"><i class="fa-brands fa-bitcoin"></i></div>
+                    <div class="resource-content">
+                        <span class="badge">Blog</span>
+                        <h3>Smart Contract Auditing: Lessons from the Trenches</h3>
+                        <p>Key findings from our Web3 security engagements and the on-chain exploits that could have been avoided.</p>
+                        <a href="#" class="card-link" style="margin-top:16px; display:inline-flex; gap:6px;">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="resource-card fade-up" data-category="whitepaper">
+                    <div class="resource-image"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+                    <div class="resource-content">
+                        <span class="badge">Whitepaper</span>
+                        <h3>Cloud Misconfiguration: The Silent Threat</h3>
+                        <p>How attackers exploit misconfigured S3 buckets, IAM roles, and serverless functions.</p>
+                        <a href="#" class="card-link" style="margin-top:16px; display:inline-flex; gap:6px;">Download <i class="fa-solid fa-download"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="resource-card fade-up" data-category="case-study">
+                    <div class="resource-image"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="resource-content">
+                        <span class="badge">Case Study</span>
+                        <h3>FinTech Platform: 3 Critical Findings Pre-Launch</h3>
+                        <p>How we discovered an account takeover chain in a payment gateway just before go-live.</p>
+                        <a href="#" class="card-link" style="margin-top:16px; display:inline-flex; gap:6px;">Read Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
             </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Get Security Insights in Your Inbox</h2>
+            <p>Join 5,000+ security-conscious engineers and CTOs who receive our weekly threat intelligence briefing.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your work email..." required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
         </div>
     </section>
 
@@ -74,17 +194,57 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <a href="index.html" class="logo footer-logo">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    SecureLayer
-                </a>
+                <a href="index.html" class="logo footer-logo"><i class="fa-solid fa-shield-halved"></i> SecureLayer</a>
                 <p>Elite hacker-led security assessments for the modern web.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html">Pentest as a Service</a>
+                    <a href="services.html">Product Security</a>
+                    <a href="services.html">AI & Logic Security</a>
+                    <a href="services.html">Red Teaming</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Use Cases</h4>
+                    <a href="#">SaaS Platforms</a>
+                    <a href="#">FinTech</a>
+                    <a href="#">Healthcare</a>
+                    <a href="#">Crypto & Web3</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="resources.html">Blog</a>
+                    <a href="resources.html">Case Studies</a>
+                    <a href="resources.html">Security Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="company.html">About Us</a>
+                    <a href="company.html">Careers</a>
+                    <a href="#">Partners</a>
+                </div>
             </div>
         </div>
         <div class="container footer-bottom">
             <p>&copy; 2026 SecureLayer Inc. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <button class="fab fab-top" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
