@@ -38,70 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
     navOverlay?.addEventListener('click', closeDrawer);
 
     // ============================================
-    // CONTACT MODAL
+    /// ============================================
+    // FORM SUCCESS HANDLER
     // ============================================
-    const modalOverlay = document.querySelector('.modal-overlay');
-    const modalClose = document.querySelector('.modal-close');
-    const contactForm = document.getElementById('contact-form');
-    const formSuccess = document.querySelector('.form-success');
-
-    function openModal() {
-        modalOverlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        modalOverlay.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    // All "Speak to Sales" and "Schedule A Call" buttons open the modal
-    document.querySelectorAll('.open-modal').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal();
-        });
-    });
-
-    modalClose?.addEventListener('click', closeModal);
-    modalOverlay?.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) closeModal();
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-    });
-
-    // Contact form submission via Formspree
-    contactForm?.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = contactForm.querySelector('.form-submit');
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-
-        try {
-            const res = await fetch(contactForm.action, {
-                method: 'POST',
-                body: new FormData(contactForm),
-                headers: { 'Accept': 'application/json' }
-            });
-
-            if (res.ok) {
-                contactForm.style.display = 'none';
-                formSuccess.style.display = 'block';
-            } else {
-                btn.textContent = 'Error. Try again.';
-                btn.disabled = false;
-            }
-        } catch {
-            // Fallback if Formspree not configured yet
-            contactForm.style.display = 'none';
-            formSuccess.style.display = 'block';
+    if (window.location.search.includes('success=true')) {
+        const form = document.getElementById('contact-form');
+        if (form) {
+            form.innerHTML = `
+                <div style="text-align:center; padding: 40px 20px;">
+                    <i class="fa-solid fa-circle-check" style="font-size: 4rem; color: #22c55e; margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 12px;">We've received your message!</h3>
+                    <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.6;">Someone from our security team will review your request and communicate with you within 24 hours.</p>
+                </div>
+            `;
         }
-    });
+    }
 
-    // ============================================
-    // SMOOTH SCROLLING
+    / SMOOTH SCROLLING
     // ============================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
