@@ -165,3 +165,88 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+
+// Threat Ticker Logic
+const initTicker = () => {
+    const tickerContainer = document.getElementById('threat-ticker');
+    if (!tickerContainer) return;
+
+    // Realistic recent high-profile CVEs for the demo
+    const threats = [
+        { cve: 'CVE-2024-21626', desc: 'Runc container breakout vulnerability', severity: 'critical' },
+        { cve: 'CVE-2024-3094', desc: 'XZ Utils backdoor discovered in SSH', severity: 'critical' },
+        { cve: 'CVE-2023-46805', desc: 'Ivanti Connect Secure authentication bypass', severity: 'high' },
+        { cve: 'CVE-2024-21412', desc: 'Windows SmartScreen security feature bypass', severity: 'high' },
+        { cve: 'CVE-2023-4863', desc: 'WebP heap buffer overflow', severity: 'critical' },
+        { cve: 'CVE-2024-23897', desc: 'Jenkins arbitrary file read vulnerability', severity: 'medium' }
+    ];
+
+    let html = '';
+    // Duplicate the list twice to ensure smooth scrolling loop without gap
+    const displayThreats = [...threats, ...threats];
+    
+    displayThreats.forEach(t => {
+        let severityText = t.severity.toUpperCase();
+        html += `
+            <div class="ticker-item">
+                <span class="ticker-severity severity-${t.severity}">${severityText}</span>
+                <span style="color: white; margin-right: 6px;">${t.cve}:</span> ${t.desc}
+            </div>
+        `;
+    });
+
+    tickerContainer.innerHTML = html;
+};
+document.addEventListener('DOMContentLoaded', initTicker);
+
+
+// Attack Surface Diagram Logic
+const initAttackSurface = () => {
+    const nodes = document.querySelectorAll('.as-node');
+    const infoPanel = document.getElementById('as-info');
+    if (!infoPanel || nodes.length === 0) return;
+
+    const data = {
+        cloud: {
+            title: "Cloud Infrastructure",
+            threat: "Misconfigured S3 buckets, overly permissive IAM roles, and exposed admin panels allow instant data exfiltration.",
+            defense: "We audit your AWS/GCP architecture for zero-day misconfigurations and enforce least-privilege principles."
+        },
+        web: {
+            title: "Web Applications",
+            threat: "SQL Injection, Cross-Site Scripting (XSS), and Broken Authentication lead to full database compromises.",
+            defense: "We perform deep, manual penetration testing beyond automated scanners to find complex business-logic flaws."
+        },
+        api: {
+            title: "Internal & External APIs",
+            threat: "BOLA (Broken Object Level Authorization) allows attackers to access other users' private data using valid API keys.",
+            defense: "We rigorously test API endpoints with custom payloads to ensure strict authorization controls are in place."
+        },
+        mobile: {
+            title: "Mobile Applications",
+            threat: "Insecure local storage, hardcoded API keys, and root-bypass flaws expose users to device-level attacks.",
+            defense: "We decompile and reverse-engineer your iOS/Android apps to ensure military-grade client-side security."
+        }
+    };
+
+    nodes.forEach(node => {
+        node.addEventListener('mouseenter', () => {
+            const target = node.getAttribute('data-target');
+            const info = data[target];
+            infoPanel.innerHTML = `
+                <h3>${info.title}</h3>
+                <p><span class="threat-text">The Threat:</span> ${info.threat}</p>
+                <p><span class="defense-text">Our Defense:</span> ${info.defense}</p>
+            `;
+        });
+        
+        node.addEventListener('mouseleave', () => {
+            infoPanel.innerHTML = `
+                <h3>Select a Vector</h3>
+                <p>Hover over a node to view vulnerability data.</p>
+            `;
+        });
+    });
+};
+document.addEventListener('DOMContentLoaded', initAttackSurface);

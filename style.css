@@ -1370,3 +1370,163 @@ a {
 .footer-logo img {
     height: 48px;
 }
+
+
+/* THREAT TICKER */
+.threat-ticker-wrapper {
+    background-color: #0f172a;
+    border-bottom: 1px solid #1e293b;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    overflow: hidden;
+    height: 40px;
+    width: 100%;
+    position: relative;
+    z-index: 90;
+}
+
+.threat-ticker-label {
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+    z-index: 2;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.threat-ticker-content {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker-scroll 30s linear infinite;
+    padding-left: 20px;
+}
+
+.threat-ticker-content:hover {
+    animation-play-state: paused;
+}
+
+.ticker-item {
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-severity {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-right: 8px;
+    color: white;
+}
+
+.severity-critical { background-color: #dc2626; }
+.severity-high { background-color: #ea580c; }
+.severity-medium { background-color: #eab308; color: #111827; }
+
+@keyframes ticker-scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+
+/* ATTACK SURFACE DIAGRAM */
+.attack-surface-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 40px;
+    position: relative;
+}
+
+.as-node {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    width: 160px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.as-node i {
+    font-size: 2.5rem;
+    color: #6366f1;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.as-node span {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.as-node:hover {
+    transform: translateY(-5px);
+    border-color: #dc2626;
+    box-shadow: 0 10px 15px rgba(220, 38, 38, 0.1);
+}
+
+.as-node:hover i {
+    color: #dc2626;
+}
+
+.as-info-panel {
+    width: 100%;
+    max-width: 600px;
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 30px;
+    color: white;
+    margin-top: 20px;
+    min-height: 200px;
+    transition: all 0.3s ease;
+}
+
+.as-info-panel h3 {
+    color: #60a5fa;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.as-info-panel p {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.threat-text {
+    color: #fca5a5;
+    font-weight: 600;
+}
+.defense-text {
+    color: #86efac;
+    font-weight: 600;
+}
+
+
+/* LEAD GEN CARD */
+.lead-gen-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f1f5f9;
+}

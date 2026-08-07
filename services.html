@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -136,6 +136,46 @@
     </section>
 
     <!-- CTA -->
+    
+    <!-- Interactive Attack Surface Section -->
+    <section class="section" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>The <span class="text-gradient">Attack Surface</span></h2>
+                <p>Hover over the components below to see how hackers exploit them, and how SecureLayer defends them.</p>
+            </div>
+            
+            <div class="attack-surface-diagram fade-up">
+                
+                <div class="as-node" data-target="cloud">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>Cloud Infra</span>
+                </div>
+                
+                <div class="as-node" data-target="web">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Web Apps</span>
+                </div>
+                
+                <div class="as-node" data-target="api">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <span>Internal APIs</span>
+                </div>
+                
+                <div class="as-node" data-target="mobile">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>Mobile Apps</span>
+                </div>
+
+                <div class="as-info-panel" id="as-info">
+                    <h3>Select a Vector</h3>
+                    <p>Hover over a node to view vulnerability data.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section class="cta section">
         <div class="cta-background">
             <div class="glow-shape shape-1"></div>
