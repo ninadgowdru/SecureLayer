@@ -1,27 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ============================================
-    // THEME (DARK MODE)
-    // ============================================
-    const savedTheme = localStorage.getItem('sl-theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-
-    document.querySelectorAll('.theme-toggle').forEach(btn => {
-        updateToggleIcon(btn, savedTheme);
-        btn.addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', next);
-            localStorage.setItem('sl-theme', next);
-            document.querySelectorAll('.theme-toggle').forEach(b => updateToggleIcon(b, next));
-        });
-    });
-
-    function updateToggleIcon(btn, theme) {
-        btn.innerHTML = theme === 'dark'
-            ? '<i class="fa-solid fa-sun"></i>'
-            : '<i class="fa-solid fa-moon"></i>';
-    }
 
     // ============================================
     // STICKY NAVBAR
