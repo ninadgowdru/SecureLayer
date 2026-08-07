@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparing for the AWS Marketplace Security Review: A Complete Guide to Passing the AWS FTR - SecureLayer</title>
+    <meta name="description" content="SecureLayer - Built by hackers, trusted by enterprises. Learn about our mission, team, and culture.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+    <!-- Mobile Nav Overlay + Drawer -->
+    <div class="nav-overlay"></div>
+    <div class="nav-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-links">
+            <a href="services.html">Services</a>
+            <a href="customers.html">Customers</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="blog.html">Blog</a>
+            <a href="company.html">Company</a>
+        </div>
+        <div class="drawer-cta">
+            <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Speak to Sales</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="customers.html">Customers</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="company.html">Company</a>
+            </div>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Speak to Sales</a>
+                <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+
+            <section class="section" style="padding-top: 120px;">
+                <div class="container" style="max-width: 800px; margin: 0 auto;">
+                    <div class="blog-header" style="margin-bottom: 40px; text-align: center;">
+                        <div style="font-size: 0.875rem; color: #6366f1; font-weight: 600; margin-bottom: 16px;">Cybersecurity &bull; Oct 24, 2024</div>
+                        <h1 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 24px;">Preparing for the AWS Marketplace Security Review: A Complete Guide to Passing the AWS FTR</h1>
+                        <img src="https://cdn.prod.website-files.com/678152e85743ff60dc810613/6a684005c77b1fc087934dd1_AWS%20Marketplace%20Security%20Review_%20How%20to%20Prepare%20%26%20Pass%20the%20AWS%20FTR.webp" alt="Preparing for the AWS Marketplace Security Review: A Complete Guide to Passing the AWS FTR" style="width: 100%; border-radius: 16px; margin-top: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
+                    </div>
+                    
+                    <div class="blog-content w-richtext" style="font-size: 1.125rem; line-height: 1.8; color: #374151;">
+                        <p>Listing your SaaS product on AWS Marketplace opens access to thousands of enterprise buyers who prefer procuring software through their existing AWS billing relationship. But before your product appears in the Marketplace, it must pass the AWS Foundational Technical Review (FTR), a security and architectural assessment that validates your product meets AWS's baseline standards for customer trust.</p><p>The FTR isn't a checkbox exercise. AWS reviews your product's security architecture, IAM implementation, data handling, logging, networking, and operational practices against specific technical requirements. Products that fail the FTR don't list. Products that pass with issues receive conditional approval with remediation timelines. Only products meeting all requirements receive clean approval.</p><p>For SaaS companies, the FTR intersects heavily with existing security and compliance work. If you're already <a href="https://www.appsecure.security/blog/how-soc-2-pentest-supports-compliance">SOC 2 certified</a>, many FTR requirements are already met. If you've completed a <a href="https://www.appsecure.security/saas-security-assessment-and-complaince">SaaS security assessment</a>, your architecture likely aligns with FTR expectations. But the FTR has AWS-specific requirements that general compliance doesn't cover.</p><p>This guide provides the complete preparation roadmap: what the AWS FTR evaluates, how to prepare your application, the common failures that delay listings, and the security testing that validates FTR readiness.</p><h2>What Is the AWS Foundational Technical Review?</h2><p>The AWS FTR is a technical assessment that AWS requires for products listing on AWS Marketplace. It evaluates whether your product follows AWS Well-Architected Framework best practices across security, reliability, performance, and operational excellence.</p><h3>Why AWS Requires the FTR</h3><p>AWS Marketplace customers trust that listed products meet a baseline quality standard. The FTR protects that trust. A product with exposed credentials, misconfigured IAM, or unencrypted customer data reflects poorly on AWS Marketplace as a platform. The FTR ensures every listed product meets minimum security and architectural standards.</p><h3>Who Must Complete the FTR</h3><p>All software products listing on AWS Marketplace: SaaS applications, AMI-based products, container products, and professional services with software components. Both new listings and major version updates require FTR review.</p><h3>FTR Review Process</h3><p><strong>Step 1: Self-assessment.</strong> Complete the FTR self-assessment checklist evaluating your product against each requirement.</p><p><strong>Step 2: Submission.</strong> Submit your product and self-assessment to the AWS Partner team.</p><p><strong>Step 3: Review.</strong> AWS technical reviewers evaluate your product architecture, configuration, and documentation against FTR requirements.</p><p><strong>Step 4: Feedback.</strong> AWS provides a report identifying any requirements not met, with remediation guidance.</p><p><strong>Step 5: Remediation and re-review.</strong> Address any findings and resubmit for verification.</p><p><strong>Step 6: Approval.</strong> Product approved for AWS Marketplace listing.</p><h2>AWS FTR Security Requirements</h2><h3>IAM and Access Control</h3><p>AWS FTR requires that your product follows IAM best practices for any AWS resources it provisions or accesses in the customer's account.</p><p><strong>Requirements:</strong></p><p>No hardcoded AWS credentials in code, configuration files, or AMIs. IAM roles used instead of access keys wherever possible. IAM policies follow least privilege (no wildcard <code>*</code> permissions on actions or resources unless technically justified). Cross-account access uses IAM roles with external ID conditions (preventing confused deputy attacks). Service-linked roles used where available.</p><p><strong>Common failures:</strong> IAM policies with <code>Action: "*"</code> and <code>Resource: "*"</code>. Access keys embedded in CloudFormation templates or container images. Overprivileged IAM roles granting permissions far beyond what the product needs.</p><p><strong>How to prepare:</strong> Audit every IAM policy your product creates or uses. Replace wildcards with specific actions and resource ARNs. Document the justification for every permission. Use the IAM Access Analyzer to identify overprivileged policies. See our <a href="https://www.appsecure.security/blog/aws-penetration-testing-guide">AWS penetration testing guide</a> for comprehensive AWS security testing.</p><h3>Data Encryption</h3><p><strong>Requirements:</strong></p><p>Data at rest encrypted using AWS KMS (customer-managed keys where possible). Data in transit encrypted using TLS 1.2+. S3 buckets with default encryption enabled. EBS volumes encrypted. RDS instances encrypted. Secrets stored in AWS Secrets Manager or Systems Manager Parameter Store (SecureString), not in plaintext configuration.</p><p><strong>Common failures:</strong> Unencrypted S3 buckets. Database instances without encryption at rest. Secrets in environment variables or configuration files. TLS 1.0/1.1 still supported.</p><p><strong>How to prepare:</strong> Enable encryption on every data store. Migrate secrets to Secrets Manager. Enforce TLS 1.2+ on all endpoints. Use AWS Config rules to detect unencrypted resources automatically.</p><h3>Logging and Monitoring</h3><p><strong>Requirements:</strong></p><p>CloudTrail enabled in all regions for API audit logging. VPC Flow Logs enabled. Application-level logging capturing security-relevant events. Log retention meeting compliance requirements (typically 1 year minimum). Logs stored in a separate, restricted account or bucket.</p><p><strong>Common failures:</strong> CloudTrail not enabled in all regions. No application-level security logging. Logs stored in the same account without access restrictions. No log retention policy.</p><p><strong>How to prepare:</strong> Enable CloudTrail in every region. Enable VPC Flow Logs. Implement application logging for authentication events, authorisation failures, data access, and configuration changes. Configure log retention policies. Store logs in a dedicated logging account with cross-account access restrictions.</p><h3>Networking</h3><p><strong>Requirements:</strong></p><p>Security groups follow least privilege (no <code>0.0.0.0/0</code> ingress on management ports). Public subnets used only for resources requiring direct internet access. Private subnets for databases, application servers, and internal services. Network ACLs providing additional defence. VPC endpoints used for AWS service access where available (reducing internet exposure).</p><p><strong>Common failures:</strong> SSH (port 22) or RDP (port 3389) open to <code>0.0.0.0/0</code>. Database instances in public subnets. All resources in a single public subnet. No VPC endpoints for S3 or other AWS services.</p><p><strong>How to prepare:</strong> Restrict security group ingress to specific CIDR ranges. Move databases and internal services to private subnets. Implement VPC endpoints for S3, DynamoDB, and other AWS services your product accesses. Use AWS Security Hub to detect networking misconfigurations.</p><h3>Resilience and Availability</h3><p><strong>Requirements:</strong></p><p>Multi-AZ deployment for production workloads. Auto Scaling configured for compute resources. RDS Multi-AZ or Aurora for database high availability. S3 for durable storage. Backup strategy with tested restoration. Health checks configured for load-balanced resources.</p><p><strong>Common failures:</strong> Single-AZ deployment. No Auto Scaling (fixed instance count). Single-AZ database without automated backups. No tested disaster recovery.</p><h3>Operational Excellence</h3><p><strong>Requirements:</strong></p><p>Infrastructure-as-code (CloudFormation, Terraform, CDK) for reproducible deployments. Automated deployment pipelines. Runbooks for common operational procedures. Monitoring dashboards for product health. Alerting for critical operational events.</p><p><strong>Common failures:</strong> Manual deployment processes. No infrastructure-as-code. No monitoring or alerting. No operational documentation.</p><h2>FTR Requirements Mapped to Compliance Frameworks</h2><p>Many FTR requirements overlap with compliance frameworks you may already maintain.</p><div class="w-embed"><div class="table-wrapper">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>FTR Requirement</th>
+        <th>SOC 2</th>
+        <th>ISO 27001</th>
+        <th>PCI DSS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IAM Least Privilege</td>
+        <td>CC6.1, CC6.3</td>
+        <td>A.5.15, A.8.3</td>
+        <td>Req 7</td>
+      </tr>
+      <tr>
+        <td>Encryption at Rest</td>
+        <td>CC6.1, CC6.7</td>
+        <td>A.8.24</td>
+        <td>Req 3</td>
+      </tr>
+      <tr>
+        <td>Encryption in Transit</td>
+        <td>CC6.1, CC6.7</td>
+        <td>A.8.24</td>
+        <td>Req 4</td>
+      </tr>
+      <tr>
+        <td>Logging and Monitoring</td>
+        <td>CC7.1, CC7.2</td>
+        <td>A.8.15, A.8.16</td>
+        <td>Req 10</td>
+      </tr>
+      <tr>
+        <td>Network Segmentation</td>
+        <td>CC6.1, CC6.6</td>
+        <td>A.8.22</td>
+        <td>Req 1</td>
+      </tr>
+      <tr>
+        <td>Secrets Management</td>
+        <td>CC6.1</td>
+        <td>A.8.24</td>
+        <td>Req 3</td>
+      </tr>
+      <tr>
+        <td>Multi-AZ / Resilience</td>
+        <td>A1.2</td>
+        <td>A.8.14</td>
+        <td>Req 12</td>
+      </tr>
+      <tr>
+        <td>IaC / Automation</td>
+        <td>CC8.1</td>
+        <td>A.8.9</td>
+        <td>Req 6</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+.table-wrapper {
+  overflow-x: auto;
+  margin: 24px 0;
+  border-radius: 12px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #e5e7eb;
+  padding: 14px 18px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.comparison-table th {
+  background: linear-gradient(135deg, #0f3b8f 0%, #0b5ed7 100%);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.comparison-table td:first-child {
+  font-weight: 600;
+  min-width: 240px;
+  white-space: nowrap;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.comparison-table tbody tr:hover {
+  background-color: #eef4ff;
+  transition: background-color 0.2s ease;
+}
+</style></div><p><strong>If you're already SOC 2 certified,</strong> approximately 70% of FTR security requirements are covered. The AWS-specific gaps are typically: IAM policy specifics (least privilege at the AWS IAM level), VPC architecture (private subnets, VPC endpoints), and AWS-native service configuration (CloudTrail, encryption settings).</p><p>See our <a href="https://www.appsecure.security/blog/how-soc-2-pentest-supports-compliance">SOC 2 penetration testing guide</a> and <a href="https://www.appsecure.security/blog/saas-compliance-audit-ready-systems">SaaS compliance audit readiness guide</a> for building the compliance foundation that supports FTR.</p><p>For <a href="https://www.appsecure.security/blog/iso-27001-penetration-testing">ISO 27001</a> and <a href="https://www.appsecure.security/blog/a-complete-guide-to-pci-dss-penetration-testing">PCI DSS</a> overlap, see our <a href="https://www.appsecure.security/blog/penetration-testing-compliance-guide-regulatory-standards">penetration testing compliance guide</a>.</p><h2>AWS FTR Preparation Checklist</h2><h3>IAM and Access Control</h3><ul role="list"><li> No hardcoded AWS credentials in code, config, or images</li><li> IAM roles used instead of access keys wherever possible</li><li> Every IAM policy follows least privilege (no unnecessary wildcards)</li><li> Cross-account access uses external ID condition</li><li> IAM Access Analyzer run with no critical findings</li><li> Service accounts have dedicated roles with minimum permissions</li><li> Root account not used for operational access</li><li> MFA enabled on all AWS console access</li></ul><h3>Data Protection</h3><ul role="list"><li> S3 buckets encrypted with default encryption (SSE-S3 or SSE-KMS)</li><li> S3 bucket policies block public access (unless explicitly required)</li><li> EBS volumes encrypted</li><li> RDS/Aurora instances encrypted at rest</li><li> DynamoDB tables encrypted</li><li> TLS 1.2+ enforced on all endpoints</li><li> Secrets stored in Secrets Manager or Parameter Store (SecureString)</li><li> No secrets in environment variables, code, or CloudFormation templates</li><li> KMS key policies restrict access appropriately</li></ul><h3>Logging and Monitoring</h3><ul role="list"><li> CloudTrail enabled in all AWS regions</li><li> CloudTrail logs stored in separate restricted bucket/account</li><li> VPC Flow Logs enabled</li><li> Application security logging implemented (auth events, access failures, data access)</li><li> Log retention policy defined and configured (minimum 1 year)</li><li> CloudWatch alarms for critical operational metrics</li><li> AWS Config enabled for configuration change tracking</li><li> AWS Security Hub enabled for security findings aggregation</li></ul><h3>Networking</h3><ul role="list"><li> Security groups follow least privilege (no 0.0.0.0/0 on management ports)</li><li> Databases and internal services in private subnets</li><li> Public subnets only for internet-facing resources (ALB, NAT Gateway)</li><li> VPC endpoints configured for AWS services (S3, DynamoDB, etc.)</li><li> Network ACLs provide additional segmentation</li><li> No unnecessary public IP addresses assigned</li><li> WAF configured on public-facing endpoints</li></ul><h3>Resilience</h3><ul role="list"><li> Multi-AZ deployment for production</li><li> Auto Scaling configured for compute resources</li><li> Database high availability configured (Multi-AZ RDS or Aurora)</li><li> Automated backups enabled with adequate retention</li><li> Backup restoration tested within past 12 months</li><li> Health checks configured for load-balanced resources</li><li> Disaster recovery plan documented</li></ul><h3>Operations</h3><ul role="list"><li> Infrastructure defined as code (CloudFormation, Terraform, CDK)</li><li> Deployment pipeline automated (CI/CD)</li><li> Operational runbooks documented</li><li> Monitoring dashboard configured</li><li> Alerting for critical events operational</li><li> Tagging strategy implemented for cost and resource management</li></ul><h3>Application Security</h3><ul role="list"><li> <a href="https://www.appsecure.security/blog/web-application-penetration-testing">Web application penetration testing</a> completed within past 12 months</li><li> <a href="https://www.appsecure.security/blog/api-penetration-testing-guide">API penetration testing</a> completed</li><li> Critical and high vulnerabilities remediated</li><li> <a href="https://www.appsecure.security/blog/secure-sdlc-framework">Secure development lifecycle</a> implemented</li><li> Dependency scanning in CI/CD pipeline</li><li> OWASP Top 10 vulnerabilities addressed</li><li> Multi-tenant isolation verified through testing</li></ul><h2>Common FTR Failures and How to Fix Them</h2><h3>Failure 1: Overprivileged IAM Policies</h3><p><strong>The finding:</strong> IAM policies grant <code>Action: "*"</code> or <code>Resource: "*"</code> without technical justification.</p><p><strong>Why it happens:</strong> Developers use broad permissions during development and don't restrict them for production. CloudFormation templates copied from examples with overprivileged policies.</p><p><strong>Fix:</strong> Audit every IAM policy. Replace <code>*</code> with specific service actions (<code>s3:GetObject</code>, <code>dynamodb:Query</code>). Scope resources to specific ARNs. Use IAM Access Analyzer to identify overprivileged entities. Document justification for any remaining broad permissions.</p><h3>Failure 2: Unencrypted Data Stores</h3><p><strong>The finding:</strong> S3 buckets, EBS volumes, or databases without encryption at rest.</p><p><strong>Why it happens:</strong> Encryption not enabled at resource creation. Legacy resources created before encryption was standard.</p><p><strong>Fix:</strong> Enable default encryption on all S3 buckets. Encrypt EBS volumes (migrate data to encrypted volumes if necessary). Enable encryption on RDS/Aurora instances (requires snapshot and restore for existing unencrypted instances). Use AWS Config rules to detect unencrypted resources.</p><h3>Failure 3: Exposed Secrets</h3><p><strong>The finding:</strong> AWS access keys, database passwords, or API keys in source code, environment variables, or configuration files.</p><p><strong>Why it happens:</strong> Quick development practices embedding secrets for convenience. Environment variables used as "good enough" secret storage.</p><p><strong>Fix:</strong> Migrate all secrets to AWS Secrets Manager or Parameter Store SecureString. Update application code to retrieve secrets at runtime. Implement pre-commit hooks (gitleaks, truffleHog) preventing secrets from entering repositories. Rotate any secrets that were previously exposed. See our <a href="https://www.appsecure.security/blog/cloud-security-testing">cloud security testing guide</a> for comprehensive cloud security validation.</p><h3>Failure 4: Open Security Groups</h3><p><strong>The finding:</strong> SSH (22) or RDP (3389) open to <code>0.0.0.0/0</code>. Database ports accessible from the internet.</p><p><strong>Why it happens:</strong> Security groups opened for debugging and never restricted. Default security group rules not reviewed.</p><p><strong>Fix:</strong> Restrict management port access to specific CIDR ranges (office IPs, VPN ranges). Use Systems Manager Session Manager for SSH access (eliminates the need for open SSH ports). Move databases to private subnets with no direct internet access.</p><h3>Failure 5: Missing CloudTrail</h3><p><strong>The finding:</strong> CloudTrail not enabled in all regions, or logs not adequately protected.</p><p><strong>Why it happens:</strong> CloudTrail enabled only in the primary region. Logs stored in the same account without access restrictions.</p><p><strong>Fix:</strong> Enable CloudTrail in all regions (organisation trail if using AWS Organizations). Store logs in a dedicated logging account or bucket with restrictive access policies. Enable log file validation. Configure lifecycle policies for log retention.</p><h3>Failure 6: Single-AZ Deployment</h3><p><strong>The finding:</strong> Production workloads running in a single Availability Zone without multi-AZ resilience.</p><p><strong>Why it happens:</strong> Cost optimization. Development architecture carried into production.</p><p><strong>Fix:</strong> Deploy across multiple AZs. Configure Auto Scaling groups spanning AZs. Enable Multi-AZ for RDS. Use ALB distributing traffic across AZs.</p><h2>Security Testing for FTR Readiness</h2><h3>Why Testing Matters for FTR</h3><p>The FTR self-assessment evaluates your architecture and configuration. It doesn't test whether your security controls actually resist attacks. A properly configured IAM policy that still allows privilege escalation through a confused deputy scenario passes self-assessment but fails under testing. <a href="https://www.appsecure.security/blog/penetration-testing-methodology">Penetration testing</a> validates what self-assessment describes.</p><h3>What to Test Before FTR Submission</h3><p><strong>AWS infrastructure security.</strong> <a href="https://www.appsecure.security/blog/cloud-penetration-testing-guide">Cloud penetration testing</a> evaluating IAM policies, S3 bucket configurations, security groups, encryption, and cross-account access. Testing validates that FTR requirements are not just configured but effective.</p><p><strong>Application security.</strong> <a href="https://www.appsecure.security/blog/web-application-penetration-testing">Web application testing</a> and <a href="https://www.appsecure.security/blog/api-penetration-testing-guide">API testing</a> ensuring the SaaS product itself is secure. FTR reviewers evaluate product security alongside infrastructure.</p><p><strong>Multi-tenant isolation.</strong> For SaaS products: systematic <a href="https://www.appsecure.security/blog/idor-vulnerabilities-detection-exploitation-and-impact">IDOR/BOLA testing</a> verifying tenant data isolation. Cross-tenant access attempts across every endpoint. See our <a href="https://www.appsecure.security/blog/saas-penetration-testing-guide">SaaS penetration testing guide</a> for methodology.</p><p><strong>Authentication and authorisation.</strong> <a href="https://www.appsecure.security/blog/authentication-bypass-risks-modern-identity-controls">Authentication bypass testing</a>. <a href="https://www.appsecure.security/blog/oauth-security-vulnerabilities-attacks-prevention">OAuth flow validation</a>. Session management assessment. <a href="https://www.appsecure.security/blog/privilege-escalation-cybersecurity">Privilege escalation</a> testing.</p><h3>Recommended Testing Approach</h3><p><strong>Phase 1: Automated AWS assessment.</strong> Run AWS-native tools (Security Hub, IAM Access Analyzer, Config rules) to identify configuration gaps against FTR requirements.</p><p><strong>Phase 2: Manual penetration testing.</strong> Expert-led <a href="https://www.appsecure.security/blog/manual-penetration-testing-guide">manual testing</a> of the application and infrastructure. <a href="https://www.appsecure.security/blog/business-logic-flaws-application-security-risks">Business logic testing</a> for SaaS-specific vulnerabilities. AppSecure provide comprehensive SaaS and AWS <a href="https://10xpentest.com/">security testing</a> for companies preparing for FTR.</p><p><strong>Phase 3: Remediation and retesting.</strong> Fix identified issues. Retest to confirm fixes. Submit for FTR with testing evidence demonstrating security validation.</p><p>For <a href="https://www.appsecure.security/blog/evaluating-penetration-testing-quality">evaluating testing providers</a>, see our quality evaluation guide.</p><h2>Beyond FTR: Maintaining Marketplace Listing</h2><h3>Ongoing Requirements</h3><p>FTR isn't one-time. AWS periodically re-evaluates listed products. Major version updates require re-review. Maintaining your listing requires ongoing security discipline.</p><p><strong>Continuous compliance:</strong> Keep SOC 2 current. Maintain <a href="https://www.appsecure.security/blog/saas-compliance-audit-ready-systems">audit readiness</a>. Annual <a href="https://www.appsecure.security/blog/how-often-to-do-penetration-testing">penetration testing</a>. Configuration drift monitoring.</p><p><strong>Continuous testing:</strong> <a href="https://www.appsecure.security/continuous-penetration-testing">Continuous penetration testing</a> and <a href="https://www.appsecure.security/pentesting-as-a-service">PTaaS</a> ensure your product security doesn't degrade between FTR reviews. See our <a href="https://www.appsecure.security/blog/continuous-penetration-testing-vs-annual-pentest">continuous vs annual pentest comparison</a>.</p><p><strong>Security improvements:</strong> SaaS security vulnerabilities evolve. See our <a href="https://www.appsecure.security/blog/saas-security-vulnerabilities-2025">SaaS security vulnerabilities analysis</a> for current threat patterns. <a href="https://www.appsecure.security/blog/vulnerability-management-program-guide">Vulnerability management</a> ensures ongoing remediation.</p><h2>AWS Marketplace and Regional Considerations</h2><h3>US Market</h3><p>The primary AWS Marketplace buyer base. US enterprise procurement teams increasingly prefer Marketplace for vendor management simplification, consolidated billing, and pre-vetted security (FTR). Passing FTR signals security maturity to US buyers.</p><h3>UAE Market</h3><p>UAE enterprises using AWS are growing rapidly. AWS Marketplace listings accessible to UAE buyers must consider data residency requirements. Products storing data in the ME (Bahrain) region satisfy many UAE data sovereignty expectations.</p><h3>Singapore Market</h3><p>Singapore financial institutions using AWS for regulated workloads require products meeting <a href="https://www.appsecure.security/blog/vapt-singapore-vulnerability-assessment-penetration-testing">MAS TRM guidelines</a>. FTR compliance plus MAS-aligned security testing strengthens your position with Singapore financial buyers. See our <a href="https://www.appsecure.security/blog/singapore-security-audit-frequency-guide">Singapore security audit guide</a>.</p><h2>How AppSecure Supports FTR Preparation</h2><p>AppSecure provides the security testing that validates FTR readiness and strengthens your Marketplace listing.</p><p><strong>AWS Infrastructure Testing.</strong> <a href="https://www.appsecure.security/blog/cloud-penetration-testing-guide">Cloud penetration testing</a> specifically for <a href="https://www.appsecure.security/blog/aws-penetration-testing-guide">AWS environments</a>: IAM policy exploitation, S3 bucket security, security group validation, cross-account access testing, and encryption verification.</p><p><strong>SaaS Application Testing.</strong> <a href="https://www.appsecure.security/blog/web-application-penetration-testing">Web application</a> and <a href="https://www.appsecure.security/blog/api-penetration-testing-guide">API penetration testing</a> validating product security. Multi-tenant isolation testing. <a href="https://www.appsecure.security/blog/business-logic-flaws-application-security-risks">Business logic</a> assessment.</p><p><strong>Compliance-Mapped Reports.</strong> Findings mapped to FTR requirements, SOC 2, and ISO 27001. One engagement providing evidence for FTR submission and compliance audits.</p><p><a href="https://www.appsecure.security/saas-security-assessment-and-complaince"><strong>SaaS security assessment</strong></a> and <a href="https://www.appsecure.security/application-security-assessment"><strong>application security assessment</strong></a> for comprehensive coverage. <a href="https://www.appsecure.security/offensive-security-testing"><strong>Offensive security testing</strong></a> for end-to-end validation.</p><p><strong>Zero False Positives.</strong> Every finding validated. <strong>3-Week Delivery.</strong> 90-day support. Complimentary retesting. <a href="https://www.appsecure.security/continuous-penetration-testing">Continuous testing</a> and <a href="https://www.appsecure.security/pentesting-as-a-service">PTaaS</a> maintaining ongoing FTR readiness.</p><p><strong>Contact AppSecure:</strong></p><ul role="list"><li><a href="https://www.appsecure.security/contact">Schedule FTR Readiness Testing</a></li><li><a href="https://www.appsecure.security/saas-security-assessment-and-complaince">SaaS Security Assessment</a></li><li><a href="https://www.appsecure.security/blog/aws-penetration-testing-guide">AWS Penetration Testing Guide</a></li></ul><h2>Frequently Asked Questions</h2><h3>1. What is the AWS Foundational Technical Review (FTR)?</h3><p>The AWS FTR is a technical assessment required for products listing on AWS Marketplace. It evaluates whether your product follows AWS Well-Architected Framework best practices across security, reliability, performance, and operational excellence. The review covers IAM and access control, data encryption, logging and monitoring, networking, resilience, and operational practices. Products must pass the FTR before appearing in AWS Marketplace.</p><h3>2. What are the main FTR security requirements?</h3><p>Key security requirements include IAM policies following least privilege (no unnecessary wildcard permissions), data encrypted at rest and in transit (KMS, TLS 1.2+), secrets in Secrets Manager (not in code or environment variables), CloudTrail enabled in all regions, VPC networking with private subnets for databases, security groups restricting access to minimum necessary ports and sources, and multi-AZ deployment for resilience.</p><h3>3. How long does FTR preparation take?</h3><p>Twelve weeks from initial self-assessment to FTR submission for organisations starting from scratch. Six to eight weeks for organisations with existing SOC 2 or ISO 27001 certification because 70%+ of FTR requirements overlap with these frameworks. The timeline includes self-assessment, remediation, security testing, retesting, and submission.</p><h3>4. What are the most common FTR failures?</h3><p>The six most common failures are overprivileged IAM policies (wildcard permissions), unencrypted data stores (S3 buckets, databases, EBS volumes), exposed secrets (credentials in code or environment variables), open security groups (management ports accessible from the internet), missing CloudTrail (not enabled in all regions), and single-AZ deployment (no resilience). All are preventable through the preparation checklist.</p><h3>5. Does SOC 2 help with FTR preparation?</h3><p>Yes. Approximately 70% of FTR security requirements overlap with SOC 2 Trust Services Criteria. IAM access control maps to CC6. Encryption maps to CC6.7. Logging maps to CC7. Change management maps to CC8. SOC 2 certified organisations have a significant head start on FTR. The remaining gaps are AWS-specific: IAM policy details, VPC architecture, and AWS-native service configuration.</p><h3>6. Do I need penetration testing for FTR?</h3><p>The FTR doesn't explicitly mandate <a href="https://www.10xpentest.com/">penetration testing</a>, but testing validates that FTR requirements are not just configured but effective. IAM policies that pass self-assessment may still allow privilege escalation under expert testing. Encryption that's configured may have implementation gaps. Penetration testing provides the evidence that your product's security works in practice, strengthening your FTR submission.</p><h3>7. What is the difference between FTR and SOC 2?</h3><p>FTR is AWS-specific: it evaluates your product against AWS Well-Architected Framework requirements for Marketplace listing. SOC 2 is an industry-standard audit evaluating trust services criteria (Security, Availability, Confidentiality). FTR is a one-time review (with periodic re-evaluation). SOC 2 is an annual audit. FTR focuses on AWS architecture. SOC 2 covers organisational security broadly. Most SaaS companies need both: SOC 2 for customer trust and FTR for AWS Marketplace listing.</p><h3>8. Can I list on AWS Marketplace without passing FTR?</h3><p>No. The FTR is a mandatory requirement for all products listing on AWS Marketplace. Products that don't pass cannot be listed. Products with conditional approval must remediate findings within defined timelines. There is no alternative path to Marketplace listing that bypasses the FTR.</p><h3>9. How do I handle secrets management for FTR?</h3><p>Migrate all secrets (AWS access keys, database passwords, API keys, encryption keys) to AWS Secrets Manager or Systems Manager Parameter Store (SecureString type). Update application code to retrieve secrets at runtime. Remove secrets from source code, environment variables, and CloudFormation/Terraform templates. Implement secret rotation. Use pre-commit hooks to prevent secrets from entering repositories. Test that no secrets are exposed through application responses or error messages.</p><h3>10. What happens after FTR approval?</h3><p>After approval, your product is listed on AWS Marketplace. Maintain FTR compliance through ongoing security practices: keep infrastructure-as-code current, maintain encryption and IAM policies, continue logging and monitoring, conduct annual penetration testing, and maintain compliance certifications. AWS periodically re-evaluates listed products. Major version updates require re-review. Continuous security testing ensures your product remains FTR-compliant.</p>
+                    </div>
+                </div>
+            </section>
+            
+
+<section class="cta section">
+        <div class="cta-background">
+            <div class="glow-shape shape-1"></div>
+            <div class="glow-shape shape-2"></div>
+        </div>
+        <div class="container cta-container">
+            <h2>Have questions about who we are?</h2>
+            <p>Reach out to our team — we'd love to connect.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+                <p>Elite hacker-led security assessments for the modern web.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html">Pentest as a Service</a>
+                    <a href="services.html">Product Security</a>
+                    <a href="services.html">AI & Logic Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Use Cases</h4>
+                    <a href="#">SaaS Platforms</a>
+                    <a href="#">FinTech</a>
+                    <a href="#">Healthcare</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="resources.html">Blog</a>
+                    <a href="resources.html">Case Studies</a>
+                    <a href="resources.html">Security Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="company.html">About Us</a>
+                    <a href="company.html">Careers</a>
+                    <a href="#">Partners</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SecureLayer Inc. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <button class="fab fab-top" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

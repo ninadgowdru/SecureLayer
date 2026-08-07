@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Due Diligence Checklist - SecureLayer</title>
+    <meta name="description" content="SecureLayer - Built by hackers, trusted by enterprises. Learn about our mission, team, and culture.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+    <!-- Mobile Nav Overlay + Drawer -->
+    <div class="nav-overlay"></div>
+    <div class="nav-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-links">
+            <a href="services.html">Services</a>
+            <a href="customers.html">Customers</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="blog.html">Blog</a>
+            <a href="company.html">Company</a>
+        </div>
+        <div class="drawer-cta">
+            <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Speak to Sales</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="customers.html">Customers</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="company.html">Company</a>
+            </div>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Speak to Sales</a>
+                <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+
+            <section class="section" style="padding-top: 120px;">
+                <div class="container" style="max-width: 800px; margin: 0 auto;">
+                    <div class="blog-header" style="margin-bottom: 40px; text-align: center;">
+                        <div style="font-size: 0.875rem; color: #6366f1; font-weight: 600; margin-bottom: 16px;">Cybersecurity &bull; Oct 24, 2024</div>
+                        <h1 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 24px;">Cybersecurity Due Diligence Checklist</h1>
+                        <img src="https://cdn.prod.website-files.com/678152e85743ff60dc810613/6a6209b664fa45146ebd9ad2_Cybersecurity%20Due%20Diligence%20Checklist.webp" alt="Cybersecurity Due Diligence Checklist" style="width: 100%; border-radius: 16px; margin-top: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
+                    </div>
+                    
+                    <div class="blog-content w-richtext" style="font-size: 1.125rem; line-height: 1.8; color: #374151;">
+                        <p>A company's cybersecurity posture is a material factor in every acquisition, investment decision, and vendor relationship. An undisclosed breach discovered after closing can wipe out deal value. A vendor with weak security becomes your security problem. An investment target with unresolved vulnerabilities carries risk your portfolio inherits.</p><p>Cybersecurity due diligence is the systematic assessment of an organization's security posture as part of a business transaction or relationship decision. It evaluates whether the target organization adequately protects its data, systems, and operations from cyber threats, and whether unresolved security issues create material risk for the acquiring company, investor, or business partner.</p><p>The challenge is that cybersecurity due diligence requires both breadth (covering governance, compliance, architecture, operations, and culture) and technical depth (validating that claimed security controls actually work). A policy document claiming "we encrypt all data" is governance evidence. A <a href="https://www.appsecure.security/blog/what-is-penetration-testing">penetration test</a> proving the encryption is properly implemented is technical validation.</p><p>This guide provides a comprehensive cybersecurity due diligence checklist covering governance, technical security, compliance, data protection, incident history, and operational security. It includes specific guidance for M&amp;A, vendor selection, and investment contexts, and explains where <a href="https://www.appsecure.security/blog/penetration-testing-methodology">penetration testing</a> fits into the due diligence process.</p><h2>When Cybersecurity Due Diligence Is Required</h2><h3>Mergers and Acquisitions</h3><p>The acquiring company inherits the target's cybersecurity risk. Undisclosed breaches, unpatched vulnerabilities, regulatory non-compliance, and technical debt become the acquirer's problems after closing. Cybersecurity due diligence quantifies this risk before the deal, enabling informed valuation, risk mitigation requirements in deal terms, and remediation planning for post-close integration.</p><p>For detailed M&amp;A testing guidance, see our <a href="https://www.appsecure.security/blog/pentesting-for-mergers-and-acquisitions">penetration testing for M&amp;A guide</a>.</p><h3>Investment Decisions (PE, VC, Growth Equity)</h3><p>Investors need to understand the cybersecurity risk of portfolio companies. A breach after investment erodes value, triggers regulatory liability, and damages the portfolio. Pre-investment due diligence identifies material security risks. Post-investment, ongoing assessment monitors security posture. For more on IPO-related security requirements, see our <a href="https://www.appsecure.security/blog/pentesting-readiness-for-ipos">pentesting for IPO readiness guide</a>.</p><h3>Vendor and Third-Party Assessment</h3><p>Every vendor with access to your data, systems, or network extends your attack surface. <a href="https://www.appsecure.security/blog/supply-chain-security-guide">Supply chain attacks</a> compromise organizations through trusted third parties. Vendor cybersecurity due diligence evaluates whether a vendor's security is adequate for the access and data you're entrusting to them.</p><h3>Partnership and Integration Decisions</h3><p>Technology partnerships, API integrations, and data-sharing agreements create technical connections between organizations. Each connection is a potential attack path. Due diligence before integration ensures the partner's security doesn't become your vulnerability.</p><h2>The Cybersecurity Due Diligence Checklist</h2><h3>Section 1: Security Governance and Programme Maturity</h3><p><strong>What to assess:</strong> Does the organization have a structured security programme, or is security ad hoc?</p><ul role="list"><li> Documented cybersecurity strategy aligned with business objectives</li><li> Designated security leadership (CISO or equivalent with appropriate authority)</li><li> Security budget as percentage of IT spend (benchmark: 10% to 15%)</li><li> Board-level cybersecurity reporting established</li><li> Risk management framework adopted (NIST CSF, ISO 27001, or equivalent)</li><li> Security policies documented, current, and enforced (acceptable use, access control, incident response, data classification)</li><li> Security awareness training delivered to all employees (frequency, completion rates)</li><li> Third-party risk management programme operational</li><li> Security programme maturity assessment conducted within past 2 years</li></ul><p><strong>Red flags:</strong> No dedicated security leadership. Security budget under 5% of IT spend. Policies that haven't been updated in 3+ years. No board reporting on cybersecurity. No third-party risk management.</p><h3>Section 2: Compliance and Regulatory Standing</h3><p><strong>What to assess:</strong> Is the organization compliant with applicable frameworks, and are there outstanding compliance issues?</p><ul role="list"><li> Active compliance certifications listed (SOC 2, ISO 27001, PCI DSS, HITRUST)</li><li> SOC 2 Type II report available and current (within 12 months)</li><li> ISO 27001 certification current with surveillance audits completed</li><li> PCI DSS compliance current (if processing payment data)</li><li> HIPAA compliance documented (if processing health data)</li><li> GDPR compliance demonstrated (if processing EU personal data)</li><li> Outstanding audit findings documented with remediation timelines</li><li> Regulatory investigations or enforcement actions disclosed</li><li> Compliance gaps identified with remediation plans</li></ul><p><strong>Red flags:</strong> Expired certifications. Outstanding critical audit findings without remediation plans. Regulatory enforcement actions. Claims of compliance without supporting audit evidence. See our <a href="https://www.appsecure.security/blog/penetration-testing-compliance-guide-regulatory-standards">penetration testing compliance guide</a> for framework-specific requirements.</p><p>For SOC 2 specific evaluation, see our <a href="https://www.appsecure.security/blog/how-soc-2-pentest-supports-compliance">SOC 2 pentest guide</a>. For ISO 27001, see our <a href="https://www.appsecure.security/blog/iso-27001-penetration-testing">ISO 27001 guide</a>. For PCI DSS, see our <a href="https://www.appsecure.security/blog/a-complete-guide-to-pci-dss-penetration-testing">PCI DSS guide</a>.</p><h3>Section 3: Technical Security Controls</h3><p><strong>What to assess:</strong> Are technical security controls implemented, current, and effective?</p><ul role="list"><li> <a href="https://www.appsecure.security/blog/penetration-testing-methodology">Penetration testing</a> conducted within past 12 months (review scope and findings)</li><li> <a href="https://www.appsecure.security/blog/vulnerability-assessment-vs-penetration-testing">Vulnerability assessment</a> conducted regularly (quarterly minimum)</li><li> Critical and high vulnerabilities remediated within defined SLAs</li><li> Multi-factor authentication enforced on all external access</li><li> Endpoint detection and response (EDR) deployed across all endpoints</li><li> Network segmentation implemented between critical and non-critical systems</li><li> Encryption at rest for sensitive data (databases, storage, backups)</li><li> Encryption in transit for all data transmission (TLS 1.2+ enforced)</li><li> Patch management with defined SLAs operational (critical: 14 days, high: 30 days)</li><li> Secure development lifecycle implemented for application development</li><li> <a href="https://www.appsecure.security/blog/cloud-security-testing">Cloud security</a> controls evaluated (IAM, encryption, logging, segmentation)</li><li> Email security controls deployed (SPF, DKIM, DMARC, anti-phishing)</li><li> Backup and recovery tested within past 12 months</li></ul><p><strong>Red flags:</strong> No penetration testing ever conducted. Critical vulnerabilities older than 90 days unresolved. MFA not enforced on external access. No EDR deployment. No encryption at rest for sensitive data. Patches months behind.</p><h3>Section 4: Data Protection and Privacy</h3><p><strong>What to assess:</strong> How does the organization handle, protect, and govern data?</p><ul role="list"><li> Data classification scheme implemented and applied</li><li> Data inventory documenting types, locations, volumes, and sensitivity</li><li> Data retention policies defined and enforced</li><li> Data processing agreements in place with all third-party processors</li><li> Privacy impact assessments conducted for new processing activities</li><li> Data subject request process operational (<a href="https://www.appsecure.security/blog/gdpr-penetration-testing">GDPR</a>, CCPA compliance)</li><li> Cross-border data transfer mechanisms documented (SCCs, adequacy decisions)</li><li> Data loss prevention controls implemented</li><li> Database access controls restricting access to authorized personnel</li><li> Personal data minimisation practices in place</li></ul><p><strong>Red flags:</strong> No data inventory (the organization doesn't know what data it holds or where). No data classification. Personal data processed without processing agreements. No data subject request process for regulated data. Customer data accessible to all employees.</p><h3>Section 5: Incident Response and History</h3><p><strong>What to assess:</strong> Has the organization experienced breaches, and is it prepared for future incidents?</p><ul role="list"><li> Incident response plan documented and current</li><li> Incident response plan tested within past 12 months (tabletop exercise)</li><li> Incident response team identified with defined roles</li><li> Breach history disclosed for past 5 years</li><li> Breach notification obligations understood and documented</li><li> Forensic investigation capability available (internal or retained third party)</li><li> Cyber insurance policy active with adequate coverage limits</li><li> Post-incident review process documented (lessons learned incorporated)</li><li> Communication plan for stakeholder notification during incidents</li></ul><p><strong>Red flags:</strong> No incident response plan. Plan never tested. Undisclosed breach history (discovered through dark web monitoring, news, or HaveIBeenPwned). No cyber insurance. No forensic investigation capability.</p><h3>Section 6: Identity and Access Management</h3><p><strong>What to assess:</strong> How does the organization manage who accesses what?</p><ul role="list"><li> Identity provider centralised (SSO for all applications)</li><li> MFA enforced for all users on all external-facing systems</li><li> Privileged access management (PAM) implemented for admin accounts</li><li> Access reviews conducted quarterly (or at minimum semi-annually)</li><li> Offboarding process includes immediate access revocation</li><li> Service account inventory maintained with ownership assigned</li><li> Least privilege principle enforced (role-based access control)</li><li> Admin accounts separated from regular user accounts</li></ul><p><strong>Red flags:</strong> No centralised identity management. MFA not enforced. No privileged access management. Access reviews not conducted. Former employee accounts active. Shared admin accounts without individual accountability.</p><h3>Section 7: Cloud and Infrastructure Security</h3><p><strong>What to assess:</strong> Is the organization's infrastructure securely configured and monitored?</p><ul role="list"><li> Cloud security posture assessed (<a href="https://www.appsecure.security/blog/cloud-security-assessment-guide">cloud assessment</a> conducted)</li><li> IAM policies follow least privilege in cloud environments</li><li> Cloud logging enabled and forwarded to SIEM</li><li> Infrastructure-as-code with security guardrails</li><li> Container and Kubernetes security addressed (if applicable)</li><li> <a href="https://www.appsecure.security/blog/network-penetration-testing-guide">Network architecture</a> documented with security zones</li><li> Remote access secured (VPN with MFA, zero-trust where implemented)</li><li> Physical security adequate for on-premises infrastructure</li><li> Asset inventory current (hardware, software, cloud resources)</li><li> <a href="https://www.appsecure.security/blog/attack-surface-management">Attack surface</a> discovered and monitored</li></ul><p><strong>Red flags:</strong> No cloud security assessment conducted. Publicly accessible storage buckets. No logging or monitoring. No asset inventory. Unknown external attack surface.</p><h3>Section 8: Application Security</h3><p><strong>What to assess:</strong> Are the organization's applications developed and tested securely?</p><ul role="list"><li> <a href="https://www.appsecure.security/blog/web-application-penetration-testing">Web application penetration testing</a> conducted on customer-facing applications</li><li> <a href="https://www.appsecure.security/blog/api-penetration-testing-guide">API security testing</a> conducted on external-facing APIs</li><li> Secure development lifecycle (SDLC) with security gates</li><li> Static and dynamic application security testing in CI/CD</li><li> Open-source dependency scanning for known vulnerabilities</li><li> Security code review conducted on critical components</li><li> Third-party application security assessed before integration</li><li> <a href="https://www.appsecure.security/blog/mobile-app-penetration-testing-guide">Mobile application security</a> tested (if applicable)</li></ul><p><strong>Red flags:</strong> No application penetration testing ever conducted. No SDLC security gates. No dependency scanning. Third-party components integrated without security review.</p><h3>Section 9: Operational Security and Monitoring</h3><p><strong>What to assess:</strong> Does the organization detect and respond to threats in real time?</p><ul role="list"><li> SIEM deployed with correlated alerting</li><li> 24/7 monitoring capability (in-house SOC or managed service)</li><li> Log retention meeting compliance requirements</li><li> Alert triage and escalation procedures documented</li><li> Mean time to detect (MTTD) and mean time to respond (MTTR) tracked</li><li> Threat intelligence feeds integrated into detection</li><li> <a href="https://www.appsecure.security/blog/threat-hunting-guide">Threat hunting</a> conducted periodically</li></ul><p><strong>Red flags:</strong> No centralised logging. No real-time monitoring. No alert triage process. Logs retained for less than compliance minimums. No detection capability outside business hours.</p><h3>Section 10: Business Continuity and Disaster Recovery</h3><ul role="list"><li> Business continuity plan documented and current</li><li> Disaster recovery plan tested within past 12 months</li><li> Recovery time objectives (RTO) and recovery point objectives (RPO) defined for critical systems</li><li> Backup strategy includes offline/immutable backups (ransomware resilience)</li><li> Geographic redundancy for critical infrastructure</li><li> Third-party dependencies identified in continuity planning</li></ul><p><strong>Red flags:</strong> No business continuity plan. DR plan never tested. No offline backups (ransomware would encrypt all backups). RTOs undefined for critical systems.</p><h2>Due Diligence by Context</h2><h3>M&amp;A Due Diligence</h3><p><strong>Pre-LOI (Letter of Intent):</strong> High-level security posture assessment using publicly available information, external <a href="https://www.appsecure.security/blog/attack-surface-management">attack surface analysis</a>, and initial questionnaire.</p><p><strong>Post-LOI, Pre-Close:</strong> Full due diligence against the complete checklist above. Request SOC 2 reports, penetration testing reports, compliance certifications, incident history, and security architecture documentation. Conduct independent <a href="https://www.appsecure.security/blog/penetration-testing-methodology">penetration testing</a> of the target's critical systems if the deal warrants it.</p><p><strong>Integration planning:</strong> Map security programme gaps identified during due diligence into the integration plan. Budget remediation costs into the deal model. Define security milestones for the first 90/180/365 days post-close.</p><p><strong>Deal impact:</strong> Material security findings should influence valuation (risk discount), deal terms (escrow for remediation costs, indemnification for undisclosed breaches), and integration timeline (security remediation before system integration). See our <a href="https://www.appsecure.security/blog/pentesting-for-mergers-and-acquisitions">M&amp;A pentesting guide</a>.</p><h3>Vendor Due Diligence</h3><p><strong>Risk-tiered approach:</strong> Not every vendor needs the same depth of assessment. Tier vendors by data access and business criticality.</p><p><strong>Tier 1 (Critical):</strong> Vendors with access to sensitive data, production systems, or critical business functions. Full checklist assessment. Annual reassessment. Independent testing evidence required.</p><p><strong>Tier 2 (Important):</strong> Vendors with access to internal systems or non-sensitive data. Abbreviated checklist. SOC 2 report review. Annual questionnaire.</p><p><strong>Tier 3 (Standard):</strong> Vendors with no data access or system connectivity. Basic security questionnaire. Periodic reassessment.</p><p><strong>Ongoing monitoring:</strong> Vendor due diligence isn't one-time. Monitor for breaches affecting vendors, compliance certification expiration, and security posture changes. See our <a href="https://www.appsecure.security/blog/supply-chain-security-guide">supply chain security guide</a>.</p><h3>Investment Due Diligence</h3><p><strong>Pre-investment assessment:</strong> Evaluate the target's security maturity relative to its stage, industry, and data sensitivity. A Series A startup won't have ISO 27001, but it should have basic security controls. A growth-stage SaaS company should have SOC 2 and regular penetration testing.</p><p><strong>Valuation impact:</strong> Quantify the cost to remediate identified security gaps. Include remediation costs in the investment model. Security technical debt is financial debt.</p><p><strong>Post-investment requirements:</strong> Define security milestones as part of board governance. Require annual penetration testing. Track compliance certification progress. See our <a href="https://www.appsecure.security/blog/pentesting-readiness-for-ipos">IPO readiness guide</a> for public market preparation.</p><h2>Where Penetration Testing Fits in Due Diligence</h2><h3>Why Documentation Alone Isn't Enough</h3><p>Security questionnaires and policy documents describe intended security posture. Penetration testing validates actual security posture. An organization may have a comprehensive patch management policy but 200 unpatched servers. They may claim strong access controls but have IDOR vulnerabilities exposing other users' data. Due diligence without technical validation relies on the target's self-assessment.</p><h3>What Testing Reveals</h3><p><a href="https://www.appsecure.security/blog/web-application-penetration-testing"><strong>Web application testing</strong></a> reveals whether customer-facing applications are secure.</p><p><a href="https://www.appsecure.security/blog/api-penetration-testing-guide"><strong>API testing</strong></a> reveals whether data exchange points are properly secured.</p><p><a href="https://www.appsecure.security/blog/cloud-penetration-testing-guide"><strong>Cloud testing</strong></a> reveals whether cloud infrastructure is configured securely.</p><p><a href="https://www.appsecure.security/blog/network-penetration-testing-guide"><strong>Network testing</strong></a> reveals whether internal networks resist lateral movement.</p><p><a href="https://www.appsecure.security/blog/it-security-audit-guide"><strong>IT security audits</strong></a> validate that governance claims match operational reality.</p><h3>When to Test During Due Diligence</h3><p><strong>Ideal:</strong> After the target agrees to technical assessment (typically post-LOI with NDA in place). Testing scope covers the target's most critical systems: customer-facing applications, data stores, and cloud infrastructure.</p><p><strong>If testing isn't possible pre-close:</strong> Negotiate testing as a post-close requirement with escrow provisions for remediation of findings above a defined severity threshold.</p><p>For selecting testing providers during due diligence, see our <a href="https://www.appsecure.security/blog/how-to-choose-vapt-provider-enterprise-guide">VAPT provider selection guide</a>.</p><h2>Scoring and Prioritisation</h2><h3>Scoring Framework</h3><p>Rate each checklist section on a 1 to 5 scale.</p><p><strong>5 (Strong):</strong> Controls fully implemented, regularly tested, and demonstrated effective. Mature programme with continuous improvement.</p><p><strong>4 (Good):</strong> Controls implemented with minor gaps. Regular testing. Documented processes.</p><p><strong>3 (Adequate):</strong> Basic controls in place. Some gaps in coverage or testing. Programme developing.</p><p><strong>2 (Weak):</strong> Significant gaps. Ad hoc controls. Limited testing. Material risk present.</p><p><strong>1 (Critical):</strong> Controls absent or fundamentally inadequate. Immediate material risk.</p><h3>Section Weighting</h3><div class="w-embed"><div class="table-wrapper">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>Weight</th>
+        <th>Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Technical Security Controls</td>
+        <td>20%</td>
+        <td>Direct vulnerability exposure</td>
+      </tr>
+      <tr>
+        <td>Incident Response and History</td>
+        <td>15%</td>
+        <td>Past breaches predict future risk</td>
+      </tr>
+      <tr>
+        <td>Data Protection</td>
+        <td>15%</td>
+        <td>Regulatory and liability exposure</td>
+      </tr>
+      <tr>
+        <td>Application Security</td>
+        <td>12%</td>
+        <td>Customer-facing risk</td>
+      </tr>
+      <tr>
+        <td>Identity and Access Management</td>
+        <td>10%</td>
+        <td>Primary breach vector</td>
+      </tr>
+      <tr>
+        <td>Compliance</td>
+        <td>8%</td>
+        <td>Regulatory standing</td>
+      </tr>
+      <tr>
+        <td>Governance</td>
+        <td>8%</td>
+        <td>Programme sustainability</td>
+      </tr>
+      <tr>
+        <td>Cloud and Infrastructure</td>
+        <td>5%</td>
+        <td>Infrastructure risk</td>
+      </tr>
+      <tr>
+        <td>Monitoring</td>
+        <td>4%</td>
+        <td>Detection capability</td>
+      </tr>
+      <tr>
+        <td>Business Continuity</td>
+        <td>3%</td>
+        <td>Operational resilience</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+.table-wrapper {
+  overflow-x: auto;
+  margin: 24px 0;
+  border-radius: 12px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #e5e7eb;
+  padding: 14px 18px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.comparison-table th {
+  background: linear-gradient(135deg, #0f3b8f 0%, #0b5ed7 100%);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.comparison-table td:first-child {
+  font-weight: 600;
+  min-width: 260px;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.comparison-table tbody tr:hover {
+  background-color: #eef4ff;
+  transition: background-color 0.2s ease;
+}
+</style></div><h3>Overall Risk Rating</h3><p><strong>80 to 100:</strong> Low risk. Proceed with standard terms.<strong>60 to 79:</strong> Moderate risk. Proceed with remediation requirements.<strong>40 to 59:</strong> High risk. Negotiate risk allocation (escrow, indemnification) and mandatory remediation timeline.<strong>Below 40:</strong> Critical risk. Consider deal impact. Require immediate remediation or adjust valuation significantly.</p><h2>UAE and Regional Considerations</h2><p><strong>UAE NESA.</strong> Organizations operating critical infrastructure in the UAE must comply with NESA information assurance standards. Due diligence for UAE targets should evaluate NESA compliance status.</p><p><strong>DIFC and ADGM.</strong> Financial entities in Dubai International Financial Centre and Abu Dhabi Global Market have specific cybersecurity regulatory requirements. Evaluate compliance with relevant DIFC/ADGM data protection and cybersecurity expectations.</p><p><strong>Data residency.</strong> UAE data sovereignty requirements may affect cloud architecture decisions. Assess whether the target's data handling complies with UAE data localisation requirements.</p><p><strong>GDPR applicability.</strong> Organizations processing EU resident data must comply with GDPR regardless of headquarters location. See our <a href="https://www.appsecure.security/blog/gdpr-penetration-testing">GDPR guide</a>.</p><h2>How AppSecure Supports Due Diligence</h2><p>AppSecure provides the technical validation that transforms due diligence from document review into security verification.</p><p><strong>Due Diligence Penetration Testing.</strong> Independent <a href="https://www.appsecure.security/blog/penetration-testing-methodology">penetration testing</a> of target systems providing evidence-based security assessment. <a href="https://www.appsecure.security/blog/web-application-penetration-testing">Web application</a>, <a href="https://www.appsecure.security/blog/api-penetration-testing-guide">API</a>, <a href="https://www.appsecure.security/blog/cloud-penetration-testing-guide">cloud</a>, and <a href="https://www.appsecure.security/blog/network-penetration-testing-guide">network</a> testing validate claimed security posture.</p><p><a href="https://www.appsecure.security/application-security-assessment"><strong>Application security assessment</strong></a> provides comprehensive coverage. <a href="https://www.appsecure.security/offensive-security-testing"><strong>Offensive security testing</strong></a> validates defensive controls.</p><p><strong>Compliance-Mapped Reports.</strong> Findings mapped to SOC 2, ISO 27001, PCI DSS, and other applicable frameworks. Reports serve both technical remediation and deal-structuring discussions.</p><p><strong>Zero False Positives.</strong> Every finding validated through exploitation. Deal teams receive confirmed risks, not scanner noise.</p><p><strong>3-Week Delivery.</strong> Fast turnaround supporting deal timelines. 90-day remediation support. <a href="https://www.appsecure.security/continuous-penetration-testing">Continuous testing</a> and <a href="https://www.appsecure.security/pentesting-as-a-service">PTaaS</a> for post-close ongoing validation. <a href="https://www.appsecure.security/fintech-security-assessment">Fintech assessment</a> for financial services targets.</p><p><strong>Contact AppSecure:</strong></p><ul role="list"><li><a href="https://www.appsecure.security/contact">Schedule Due Diligence Testing</a></li><li><a href="https://www.appsecure.security/blog/pentesting-for-mergers-and-acquisitions">Pentesting for M&amp;A</a></li><li><a href="https://www.appsecure.security/application-security-assessment">Application Security Assessment</a></li></ul><h2>Frequently Asked Questions</h2><h3>1. What is cybersecurity due diligence?</h3><p>Cybersecurity due diligence is the systematic assessment of an organization's security posture conducted as part of a business transaction or relationship decision. It evaluates governance, technical controls, compliance, data protection, incident history, and operational security to determine whether the organization adequately protects its data and systems. Due diligence is conducted during M&amp;A transactions, vendor selection, investment decisions, and partnership evaluations to quantify cybersecurity risk before committing to the relationship.</p><h3>2. Why is cybersecurity due diligence important for M&amp;A?</h3><p>The acquiring company inherits the target's cybersecurity risk after closing. Undisclosed breaches, unpatched vulnerabilities, regulatory non-compliance, and technical debt become the acquirer's financial and legal responsibility. Due diligence quantifies this risk before the deal, enabling informed valuation adjustments, risk-allocation deal terms (escrow, indemnification), and post-close remediation planning. Without due diligence, acquirers discover security problems after they've already paid.</p><h3>3. What should a cybersecurity due diligence checklist include?</h3><p>A comprehensive checklist covers ten areas: security governance and programme maturity, compliance and regulatory standing, technical security controls (penetration testing, vulnerability management, encryption, patching), data protection and privacy, incident response and breach history, identity and access management, cloud and infrastructure security, application security, operational security and monitoring, and business continuity and disaster recovery. Each area includes specific items to verify with documentation and, where possible, independent technical validation.</p><h3>4. How does penetration testing support due diligence?</h3><p>Penetration testing provides independent technical validation of the target's actual security posture. Documentation and questionnaires describe intended security. Penetration testing proves whether controls actually work. Testing may reveal unpatched vulnerabilities, access control failures, data exposure, or misconfigured cloud infrastructure that questionnaire responses didn't disclose. Material findings inform valuation, deal terms, and remediation requirements.</p><h3>5. What are the biggest red flags in cybersecurity due diligence?</h3><p>Critical red flags include no penetration testing ever conducted, undisclosed breach history, expired compliance certifications with no remediation plan, no dedicated security leadership, MFA not enforced on external access, critical vulnerabilities older than 90 days, no incident response plan, no data inventory (the organization doesn't know what data it holds), former employee accounts still active, and no cyber insurance.</p><h3>6. How should vendors be assessed for cybersecurity due diligence?</h3><p>Tier vendors by data access and business criticality. Critical vendors (access to sensitive data or production systems) receive full checklist assessment with independent testing evidence. Important vendors receive abbreviated assessment with SOC 2 report review. Standard vendors receive basic questionnaires. Reassess vendors annually. Monitor for breaches and compliance changes between assessments.</p><h3>7. How long does cybersecurity due diligence take?</h3><p>Document-based assessment (questionnaire and evidence review) takes 2 to 4 weeks. Adding independent penetration testing adds 3 to 4 weeks. Total due diligence for a comprehensive assessment: 4 to 8 weeks depending on the target's size and complexity. For time-sensitive deals, prioritize the highest-risk areas (technical controls, breach history, compliance standing) and plan deeper assessment for post-close.</p><h3>8. What happens when due diligence reveals security problems?</h3><p>Options include valuation adjustment (discount reflecting remediation cost and residual risk), deal terms (escrow for remediation, indemnification for undisclosed breaches, security representations and warranties), remediation requirements (specific security milestones as conditions or post-close obligations), integration planning (security remediation integrated into Day 1 to Day 90 plan), or deal termination (if security risk is unacceptable and unmitigable).</p><h3>9. Should cybersecurity due diligence include the target's third-party vendors?</h3><p>Yes, particularly for critical third-party relationships. Assess whether the target has a third-party risk management programme, whether critical vendors have been evaluated, and whether vendor-related incidents have occurred. A target with weak vendor management may have supply chain risks that become the acquirer's problem. At minimum, identify the target's critical vendors and their security posture.</p><h3>10. How does cybersecurity due diligence apply to startups?</h3><p>Startups are assessed relative to their stage and data sensitivity. Early-stage startups won't have ISO 27001 certification, but should have basic controls: MFA, encryption, secure development practices, and access management. Growth-stage startups pursuing enterprise customers should have SOC 2 certification (or clear path to it), regular penetration testing, and documented security policies. Investors should define security maturity milestones as governance requirements.</p>
+                    </div>
+                </div>
+            </section>
+            
+
+<section class="cta section">
+        <div class="cta-background">
+            <div class="glow-shape shape-1"></div>
+            <div class="glow-shape shape-2"></div>
+        </div>
+        <div class="container cta-container">
+            <h2>Have questions about who we are?</h2>
+            <p>Reach out to our team — we'd love to connect.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+                <p>Elite hacker-led security assessments for the modern web.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html">Pentest as a Service</a>
+                    <a href="services.html">Product Security</a>
+                    <a href="services.html">AI & Logic Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Use Cases</h4>
+                    <a href="#">SaaS Platforms</a>
+                    <a href="#">FinTech</a>
+                    <a href="#">Healthcare</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="resources.html">Blog</a>
+                    <a href="resources.html">Case Studies</a>
+                    <a href="resources.html">Security Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="company.html">About Us</a>
+                    <a href="company.html">Careers</a>
+                    <a href="#">Partners</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SecureLayer Inc. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <button class="fab fab-top" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

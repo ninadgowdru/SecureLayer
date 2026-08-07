@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Bug Bounty: Unauthorized access to any Meta user’s draft profile picture frames - SecureLayer</title>
+    <meta name="description" content="SecureLayer - Built by hackers, trusted by enterprises. Learn about our mission, team, and culture.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+    <!-- Mobile Nav Overlay + Drawer -->
+    <div class="nav-overlay"></div>
+    <div class="nav-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-links">
+            <a href="services.html">Services</a>
+            <a href="customers.html">Customers</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="blog.html">Blog</a>
+            <a href="company.html">Company</a>
+        </div>
+        <div class="drawer-cta">
+            <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Speak to Sales</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="customers.html">Customers</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="company.html">Company</a>
+            </div>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Speak to Sales</a>
+                <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+
+            <section class="section" style="padding-top: 120px;">
+                <div class="container" style="max-width: 800px; margin: 0 auto;">
+                    <div class="blog-header" style="margin-bottom: 40px; text-align: center;">
+                        <div style="font-size: 0.875rem; color: #6366f1; font-weight: 600; margin-bottom: 16px;">Cybersecurity &bull; Oct 24, 2024</div>
+                        <h1 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 24px;">Meta Bug Bounty: Unauthorized access to any Meta user’s draft profile picture frames</h1>
+                        <img src="https://cdn.prod.website-files.com/678152e85743ff60dc810613/693bbe2fb1fc71e5e6b6ed6c_Meta%20Bug%20Bounty_%20Unauthorized%20access%20to%20other%20users%20AI%20prompts.avif" alt="Meta Bug Bounty: Unauthorized access to any Meta user’s draft profile picture frames" style="width: 100%; border-radius: 16px; margin-top: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
+                    </div>
+                    
+                    <div class="blog-content w-richtext" style="font-size: 1.125rem; line-height: 1.8; color: #374151;">
+                        <p><em>Note: This is being published with the permission of Facebook under the responsible disclosure policy.</em>‍</p><h2>Vulnerability Description</h2><p><br>Facebook allows its users to create frames for profile pictures. The users have an option to save the frames in the draft for publishing it in the future.</p><p>During the security research on facebook.com web application, it was identified that the `image_id` parameter of the POST /media_effect/swipeable_frame/image/process_background/?image_id=XXXXX HTTP request is vulnerable to Insecure Direct Object Reference. Insecure Direct Object References (IDOR) occurs when an application provides direct access to objects based on user-supplied input. As a result of this vulnerability, attackers can bypass authorization and access any resources in the system directly.<br><br>This bug could have allowed the attackers to access any draft frame using the image id in the vulnerable request. The response will disclose the CDN URL of draft frame.</p><h2>Vulnerable Request</h2><pre contenteditable="false" class="w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-javascript" style="white-space:pre-wrap"><span style="color:#d4d0ab"><span>POST /media_effect/swipeable_frame/image/process_background/?image_id=</span><span style="color:#f5ab35">1343397992677858</span><span> HTTP/</span><span style="color:#f5ab35">1.1</span><span>
+</span></span><span style="color:#d4d0ab"><span></span><span class="hljs-attr">Host</span><span>: www.facebook.com
+</span></span><span style="color:#d4d0ab">Content-Type: application/x-www-form-urlencoded
+</span><span style="color:#d4d0ab"><span></span><span class="hljs-attr">Accept</span><span>: *</span><span style="color:#d4d0ab">/*
+</span></span><span style="color:#d4d0ab">Origin: https://www.facebook.com/
+</span><span style="color:#d4d0ab">Cookie: XXXXXX
+</span><span style="color:#d4d0ab">
+</span><span style="color:#d4d0ab"> 
+</span><span style="color:#d4d0ab">
+</span><span style="color:#d4d0ab">__user=100015079149621&amp;__a=1&amp;__dyn=&amp;__csr=&amp;__req=f&amp;__beoa=0&amp;__pc=PHASED%3ADEFAULT&amp;dpr=2&amp;
+</span><span style="color:#d4d0ab">__ccg=EXCELLENT&amp;__rev=1003213340&amp;__s=oerjhz%3Ab1m1f7%3Ahmlzoq&amp;__hsi=6920987950239386054-0&amp;__comet_req=0&amp;cquick=jsc_c_i&amp;cquick_token=AQ5Ai6llLi9J4W8VArc&amp;ctarget=
+</span><span style="color:#d4d0ab">https%253A%252F%252Fwww.facebook.com&amp;fb_dtsg=AQG1ZV6sx65S%3AAQGjkafXDmRo&amp;jazoest=22066
+</span><span style="color:#d4d0ab">&amp;__spin_r=1003213340&amp;__spin_b=trunk&amp;__spin_t=1611377016</span></code></pre><p>‍</p><h2>How to Setup</h2><p>Users:</p><p>User A uploaded an art while creating a frame and saved the frame in the draft.<br>User B who is an attacker and wants to view user A’s unpublished frames.</p><h2>Steps to Reproduce</h2><p><strong>Step 1:</strong> Log in to facebook.com as User A.</p><p><strong>Step 2:</strong> Go to https://www.facebook.com/frames/manage/ .</p><p><strong>Step 3:</strong> Click on the ‘Open frame studio’ button, upload an art in the ‘Create frame’ window, and save the frame in the draft.</p><p><strong>Step 4:</strong> Log in to facebook.com as User B.</p><p><strong>Step 5:</strong> Go to https://www.facebook.com/frames/manage/ and click on the “open frame studio” button.</p><p><strong>Step 6:</strong> Upload an art in the ‘create frame’ pop-up.</p><p><strong>Step 7:</strong> Intercept the vulnerable request in the Burp Suite.</p><p><strong>Step 8:</strong> Change the image_id parameter value with the user A uploaded art image id. The draft art CDN url of User A will be disclosed in the API response.</p><p><strong>Step 9:</strong> Copy the disclosed art CDN url and open it in the browser. The uploaded frame of User A will be displayed in the browser.</p><h2>Timeline</h2><p>January 23, 2021: Bug reported to Facebook</p><p>February 18, 2021: Facebook team managed to reproduce the bug at their end.</p><p>March 2, 2021: Facebook team resolved the bug and requested to verify the patch.</p><p>March 3, 2021: Patch verified</p><p>June 12, 2021: Bounty awarded</p><h2>Conclusion</h2><p>This vulnerability highlighted a critical Insecure Direct Object Reference (IDOR) issue in Facebook’s Frame Studio feature, which could have allowed unauthorized access to users’ draft frames. By responsibly disclosing this security flaw, we ensured that Facebook was able to patch the issue, preventing potential exploitation.<br><br>We appreciate Facebook’s prompt response and their commitment to user security. This case reinforces the importance of rigorous security testing and responsible disclosure in keeping digital platforms safe.<br><br>If you have any questions regarding this research or would like to conduct a similar security assessment for your company, feel free to reach out at <a href="#">hello@appsecure.security</a>.<br><br>Stay secure! 🚀🔒</p>
+                    </div>
+                </div>
+            </section>
+            
+
+<section class="cta section">
+        <div class="cta-background">
+            <div class="glow-shape shape-1"></div>
+            <div class="glow-shape shape-2"></div>
+        </div>
+        <div class="container cta-container">
+            <h2>Have questions about who we are?</h2>
+            <p>Reach out to our team — we'd love to connect.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+                <p>Elite hacker-led security assessments for the modern web.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html">Pentest as a Service</a>
+                    <a href="services.html">Product Security</a>
+                    <a href="services.html">AI & Logic Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Use Cases</h4>
+                    <a href="#">SaaS Platforms</a>
+                    <a href="#">FinTech</a>
+                    <a href="#">Healthcare</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="resources.html">Blog</a>
+                    <a href="resources.html">Case Studies</a>
+                    <a href="resources.html">Security Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="company.html">About Us</a>
+                    <a href="company.html">Careers</a>
+                    <a href="#">Partners</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SecureLayer Inc. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <button class="fab fab-top" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

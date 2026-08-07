@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How could I have accessed other users' Meta AI prompts and generated content – Technical Analysis - SecureLayer</title>
+    <meta name="description" content="SecureLayer - Built by hackers, trusted by enterprises. Learn about our mission, team, and culture.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+    <!-- Mobile Nav Overlay + Drawer -->
+    <div class="nav-overlay"></div>
+    <div class="nav-drawer">
+        <div class="drawer-header">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <button class="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-links">
+            <a href="services.html">Services</a>
+            <a href="customers.html">Customers</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="blog.html">Blog</a>
+            <a href="company.html">Company</a>
+        </div>
+        <div class="drawer-cta">
+            <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Speak to Sales</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="customers.html">Customers</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="company.html">Company</a>
+            </div>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Speak to Sales</a>
+                <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+
+            <section class="section" style="padding-top: 120px;">
+                <div class="container" style="max-width: 800px; margin: 0 auto;">
+                    <div class="blog-header" style="margin-bottom: 40px; text-align: center;">
+                        <div style="font-size: 0.875rem; color: #6366f1; font-weight: 600; margin-bottom: 16px;">Cybersecurity &bull; Oct 24, 2024</div>
+                        <h1 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 24px;">How could I have accessed other users' Meta AI prompts and generated content – Technical Analysis</h1>
+                        <img src="https://cdn.prod.website-files.com/678152e85743ff60dc810613/693bbfc2b613dbb8d1e2d436_How%20could%20I%20have%20accessed%20other%20users%27%20Meta%20AI%20prompts.avif" alt="How could I have accessed other users' Meta AI prompts and generated content – Technical Analysis" style="width: 100%; border-radius: 16px; margin-top: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">
+                    </div>
+                    
+                    <div class="blog-content w-richtext" style="font-size: 1.125rem; line-height: 1.8; color: #374151;">
+                        <p><a href="https://meta.ai">Meta AI</a> is a public-facing AI assistant and image generation platform by Meta (formerly Facebook). The platform enables users to interact with an LLM-powered assistant and generate AI art based on text prompts. The AI-generated media (e.g., images) and associated prompts are stored and tied to user sessions for future edits, reimaginations, or sharing.</p><p>The platform relies heavily on GraphQL APIs to facilitate client-server communication for media creation, modification, and interaction.</p><p>During bug bounty research on the Meta AI dashboard, I identified a critical flaw in the GraphQL mutation useAbraImagineReimagineMutation. The API fails to verify the ownership of the media_set_id parameter against the authenticated user session.</p><p>This missing authorization check allows an attacker to modify the media_set_id field in the request to arbitrarily access any other user’s AI-generated media along with the original prompt and the model-generated description. The bug permits unauthorized access to highly sensitive creative content.</p><h2>Step by step guide</h2><p><strong>Users Involved:</strong></p><ul role="list"><li>User<strong> </strong>A: Victim (their prompt &amp; AI output is leaked)</li><li>User B: Attacker<br></li></ul><ol role="list"><li>A new conversation was started on <a target="_new" href="https://meta.ai">https://meta.ai</a>, and the AI model was asked to generate an image.</li><li>Once the image was generated, the <strong>Edit</strong> button was clicked.</li><li>In the edit prompt chatbox, a random input (such as <code>"-"</code>) was entered and submitted.</li><li>The request sent to the server was intercepted using Burp Suite.</li><li>Within the vulnerable GraphQL request, a parameter named <code>media_set_id</code> was located.</li><li>This ID was replaced with a different user’s <code>media_set_id</code>, which could be discovered through shared URLs or guessed due to its predictable format.</li><li>The modified request was then forwarded to the server. As a result, the server returned the original prompt and the AI-generated output associated with the other user’s content.</li></ol><figure style="max-width:2874pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/678152e85743ff60dc810613/68771327796cdf00c8d8fc75_Screenshot%202025-01-17%20at%201.48.23%E2%80%AFPM.avif"></div><figcaption><br>Vulnerable request proof of concept</figcaption></figure><h2>Vulnerable Endpoint</h2><pre contenteditable="false" class="w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-javascript" style="white-space:pre-wrap"><span><span>POST /api/graphql/ HTTP/</span><span style="color:#f5ab35">2</span><span>
+</span></span><span><span></span><span class="hljs-attr">Host</span><span>: www.meta.ai
+</span></span><span>
+</span><span>...
+</span><span>fb_api_req_friendly_name=useAbraImagineReimagineMutation
+</span><span>...
+</span><span>{
+</span><span><span>  </span><span style="color:#abe338">"input"</span><span>: {
+</span></span><span><span>    </span><span style="color:#abe338">"client_mutation_id"</span><span>: </span><span style="color:#abe338">"20"</span><span>,
+</span></span><span><span>    </span><span style="color:#abe338">"actor_id"</span><span>: </span><span style="color:#abe338">"490802730791771"</span><span>,
+</span></span><span><span>    </span><span style="color:#abe338">"external_conversation_id"</span><span>: </span><span style="color:#abe338">"28c26ba7-fc63-4b0a-88a4-4ed68be04ee8"</span><span>,
+</span></span><span><span>    </span><span style="color:#abe338">"image_id"</span><span>: </span><span style="color:#f5ab35">null</span><span>,
+</span></span><span><span>    </span><span style="color:#abe338">"instruction"</span><span>: </span><span style="color:#abe338">"change car colour to red"</span><span>,
+</span></span><span><span>    </span><span style="color:#abe338">"media_set_id"</span><span>: </span><span style="color:#abe338">"476707502200577"</span><span>,  ← REPLACE THIS WITH VICTIM’S media_set_id
+</span></span><span><span>    </span><span style="color:#abe338">"media_type"</span><span>: </span><span style="color:#abe338">"FLASH_IMAGE"</span><span>,
+</span></span><span><span>    </span><span style="color:#abe338">"message_id"</span><span>: </span><span style="color:#abe338">"mid.$gAB-7oD-PxPWaMyOd9mUAd44UalyV"</span><span>
+</span></span><span>  }
+</span><span>}
+</span><span></span></code></pre><h2>Technical Root Cause</h2><p>The vulnerable api failed to validate ownership of media_set_id. This allowed any authenticated user to pass another user’s media_set_id (e.g., a shared media or guessed ID) and retrieve the original AI prompt and generated content, without any authorization or permission checks.</p><h2>Impact</h2><p>This vulnerability could be exploited to:</p><ul role="list"><li>Access private AI conversations or artwork created by other users.</li><li>Leak sensitive prompts (e.g. personal scenarios, NSFW content).</li></ul><h2><strong>Fix &amp; Meta’s Response</strong></h2><p>Meta’s security team responded promptly and handled the report professionally. Here’s their official statement:</p><p>“After reviewing this issue, we have decided to award you a bounty of $10,000. Below is an explanation of the bounty amount. Meta fulfills its bounty awards through Bugcrowd.</p><p>You demonstrated an issue where a malicious actor could access users' prompts and AI-generated media via a certain GraphQL query, potentially allowing an attacker to access users’ private media. We mitigated this and found no evidence of abuse.”<br></p><figure class="w-richtext-align-normal w-richtext-figure-type-image"><div><img loading="lazy" alt="" src="https://cdn.prod.website-files.com/678152e85743ff60dc810613/687715c614c135b0ac9ae69f_Screenshot%202025-05-21%20at%2013.25.26.avif"></div><figcaption><br>Meta security team's response after deploying temporary fix.</figcaption></figure><h2>Timeline</h2><p><strong>Reported:</strong> December 26, 2024<br><strong>Temporary Fix Deployed:</strong> January 24, 2025<br><strong>Full Fix Confirmed:</strong> April 24, 2025<br><strong>Total Bounty Awarded:</strong> 10000 USD</p><h2>Conclusion</h2><p>This vulnerability exposed a critical access control flaw in the Meta AI platform, allowing unauthorized access to other users' prompts and AI-generated content via a missing ownership check on the <code>media_set_id</code> parameter. The issue could have led to serious privacy violations and unauthorized data harvesting. Meta has since remediated the vulnerability by implementing proper authorization checks, ensuring that media assets are only accessible to their rightful owners. We commend the Meta security team for their prompt response and resolution.</p><p>If you are interested in conducting similar research or collaborating on security testing, feel free to reach out to us via our <a href="/contact">Contact Page</a>.</p><p>For press or PR-related queries, please email: <strong>pr@appsecure.security</strong></p>
+                    </div>
+                </div>
+            </section>
+            
+
+<section class="cta section">
+        <div class="cta-background">
+            <div class="glow-shape shape-1"></div>
+            <div class="glow-shape shape-2"></div>
+        </div>
+        <div class="container cta-container">
+            <h2>Have questions about who we are?</h2>
+            <p>Reach out to our team — we'd love to connect.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo"><img src="logo.png" alt="SecureLayer Logo"> SecureLayer</a>
+                <p>Elite hacker-led security assessments for the modern web.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="services.html">Pentest as a Service</a>
+                    <a href="services.html">Product Security</a>
+                    <a href="services.html">AI & Logic Security</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Use Cases</h4>
+                    <a href="#">SaaS Platforms</a>
+                    <a href="#">FinTech</a>
+                    <a href="#">Healthcare</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="resources.html">Blog</a>
+                    <a href="resources.html">Case Studies</a>
+                    <a href="resources.html">Security Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="company.html">About Us</a>
+                    <a href="company.html">Careers</a>
+                    <a href="#">Partners</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 SecureLayer Inc. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <button class="fab fab-top" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
