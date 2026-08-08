@@ -15,5 +15,4 @@ for file in files:
         with open(file, 'w', encoding='utf-8') as f:
             f.write(content)
         count += 1
-
 print(f"Updated {count} files.")
