@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Threat Library - SecureLayer</title>
-    <meta name="description" content="SecureLayer provides elite ethical hacker-led application security and pentesting for fast-scaling teams.">
+    <meta name="description"
+        content="SecureLayer provides elite ethical hacker-led application security and pentesting for fast-scaling teams.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,6 +14,7 @@
     <link rel="stylesheet" href="style.css?v=31">
     <link rel="icon" type="image/png" href="/logo.png">
 </head>
+
 <body>
 
     <!-- Mobile Nav Overlay + Drawer -->
@@ -29,7 +32,8 @@
             <a href="company.html">Trust Center</a>
         </div>
         <div class="drawer-cta">
-            <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Speak to Sales</a>
+            <a href="contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">Speak to
+                Sales</a>
         </div>
     </div>
 
@@ -55,12 +59,15 @@
     <!-- Inner Hero -->
     <header class="inner-hero">
         <div class="container" style="text-align: center;">
-            <div style="display: inline-flex; align-items: center; background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.2); padding: 6px 16px; border-radius: 20px; color: #dc2626; font-weight: 600; font-size: 0.875rem; margin-bottom: 24px;">
+            <div
+                style="display: inline-flex; align-items: center; background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.2); padding: 6px 16px; border-radius: 20px; color: #dc2626; font-weight: 600; font-size: 0.875rem; margin-bottom: 24px;">
                 <i class="fa-solid fa-bug" style="margin-right: 8px;"></i> Threat Intelligence
             </div>
-            <h1 style="font-size: 3.5rem; margin-bottom: 24px;">The <span class="text-gradient">Threat Library</span></h1>
+            <h1 style="font-size: 3.5rem; margin-bottom: 24px;">The <span class="text-gradient">Threat Library</span>
+            </h1>
             <p style="color: #64748b; font-size: 1.25rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">
-                An encyclopedia of critical vulnerabilities. Learn how these exploits function in the wild and how SecureLayer engineers discover and remediate them.
+                An encyclopedia of critical vulnerabilities. Learn how these exploits function in the wild and how
+                SecureLayer engineers discover and remediate them.
             </p>
         </div>
     </header>
@@ -68,15 +75,19 @@
     <!-- Library Section -->
     <section class="section">
         <div class="container" style="max-width: 900px;">
-            
+
             <div class="threat-card fade-up">
                 <div class="threat-header">
                     <h3>Broken Access Control (BAC)</h3>
                     <span class="cvss critical">Critical 9.1</span>
                 </div>
                 <div class="threat-body">
-                    <p><strong>What it is:</strong> When an application fails to properly enforce restrictions on what authenticated users are allowed to do. Attackers can view sensitive files, modify other users' data, or change access rights.</p>
-                    <p><strong>How SecureLayer Finds It:</strong> Automated scanners almost always miss BAC because they lack business logic context. Our engineers manually map user roles and manipulate API parameter IDs (IDOR) to bypass tenant isolation boundaries.</p>
+                    <p><strong>What it is:</strong> When an application fails to properly enforce restrictions on what
+                        authenticated users are allowed to do. Attackers can view sensitive files, modify other users'
+                        data, or change access rights.</p>
+                    <p><strong>How SecureLayer Finds It:</strong> Automated scanners almost always miss BAC because they
+                        lack business logic context. Our engineers manually map user roles and manipulate API parameter
+                        IDs (IDOR) to bypass tenant isolation boundaries.</p>
                 </div>
             </div>
 
@@ -86,8 +97,13 @@
                     <span class="cvss high">High 8.5</span>
                 </div>
                 <div class="threat-body">
-                    <p><strong>What it is:</strong> A vulnerability that allows an attacker to induce the server-side application to make HTTP requests to an arbitrary domain of the attacker's choosing. This is notoriously used to compromise AWS metadata endpoints (169.254.169.254) and steal IAM cloud credentials.</p>
-                    <p><strong>How SecureLayer Finds It:</strong> We identify endpoints that fetch external resources (like PDF generators or webhook handlers) and inject internal IP addresses or cloud metadata URLs to pivot into your internal network.</p>
+                    <p><strong>What it is:</strong> A vulnerability that allows an attacker to induce the server-side
+                        application to make HTTP requests to an arbitrary domain of the attacker's choosing. This is
+                        notoriously used to compromise AWS metadata endpoints (169.254.169.254) and steal IAM cloud
+                        credentials.</p>
+                    <p><strong>How SecureLayer Finds It:</strong> We identify endpoints that fetch external resources
+                        (like PDF generators or webhook handlers) and inject internal IP addresses or cloud metadata
+                        URLs to pivot into your internal network.</p>
                 </div>
             </div>
 
@@ -97,8 +113,12 @@
                     <span class="cvss critical">Critical 10.0</span>
                 </div>
                 <div class="threat-body">
-                    <p><strong>What it is:</strong> The holy grail of hacking. An attacker can execute arbitrary operating system commands on the server running an application, leading to a complete system takeover.</p>
-                    <p><strong>How SecureLayer Finds It:</strong> We look for insecure deserialization, flawed file upload parsers, or vulnerable third-party dependencies (like Log4j). We then craft highly specific payloads to gain a reverse shell into the environment.</p>
+                    <p><strong>What it is:</strong> The holy grail of hacking. An attacker can execute arbitrary
+                        operating system commands on the server running an application, leading to a complete system
+                        takeover.</p>
+                    <p><strong>How SecureLayer Finds It:</strong> We look for insecure deserialization, flawed file
+                        upload parsers, or vulnerable third-party dependencies (like Log4j). We then craft highly
+                        specific payloads to gain a reverse shell into the environment.</p>
                 </div>
             </div>
 
@@ -108,8 +128,12 @@
                     <span class="cvss high">High 8.8</span>
                 </div>
                 <div class="threat-body">
-                    <p><strong>What it is:</strong> Injection of malicious SQL queries via client input. It allows an attacker to view data they shouldn't, modify/delete data, or even escalate to RCE in certain database configurations.</p>
-                    <p><strong>How SecureLayer Finds It:</strong> While standard scanners test obvious parameters, we manually fuzz complex, nested JSON objects, GraphQL queries, and heavily filtered inputs using advanced time-based and blind SQLi techniques.</p>
+                    <p><strong>What it is:</strong> Injection of malicious SQL queries via client input. It allows an
+                        attacker to view data they shouldn't, modify/delete data, or even escalate to RCE in certain
+                        database configurations.</p>
+                    <p><strong>How SecureLayer Finds It:</strong> While standard scanners test obvious parameters, we
+                        manually fuzz complex, nested JSON objects, GraphQL queries, and heavily filtered inputs using
+                        advanced time-based and blind SQLi techniques.</p>
                 </div>
             </div>
 
@@ -185,6 +209,5 @@
 
     <script src="script.js?v=31"></script>
 </body>
+
 </html>
-
-
