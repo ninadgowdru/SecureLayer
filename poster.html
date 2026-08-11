@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureLayer Marketing Poster</title>
+    <title>SeeLayer Marketing Poster</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- html2canvas for exporting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
@@ -31,7 +34,7 @@
             right: 20px;
             z-index: 100;
         }
-        
+
         .download-btn {
             background: #3b82f6;
             color: white;
@@ -58,9 +61,10 @@
             position: relative;
             overflow: hidden;
             /* Scale down for viewing on screen, but html2canvas exports original 1080x1920 */
-            transform: scale(0.4); 
+            transform: scale(0.4);
             transform-origin: top center;
-            margin-bottom: -1150px; /* offset the scale */
+            margin-bottom: -1150px;
+            /* offset the scale */
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             border: 1px solid #1e293b;
         }
@@ -72,26 +76,27 @@
             left: -200px;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
             border-radius: 50%;
             z-index: 1;
         }
+
         .glow-orb-2 {
             position: absolute;
             bottom: -300px;
             right: -300px;
             width: 1000px;
             height: 1000px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
             border-radius: 50%;
             z-index: 1;
         }
-        
+
         .grid-overlay {
             position: absolute;
             inset: 0;
             background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             z-index: 2;
         }
@@ -129,7 +134,7 @@
             margin: 0;
             letter-spacing: -2px;
         }
-        
+
         .header h2 {
             color: #60a5fa;
             font-size: 32px;
@@ -170,7 +175,7 @@
             width: 60px;
             text-align: center;
         }
-        
+
         .service-item:nth-child(even) .service-icon {
             color: #34d399;
         }
@@ -187,7 +192,7 @@
             background: rgba(15, 23, 42, 0.8);
             border-radius: 24px;
             padding: 60px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
         }
 
@@ -219,10 +224,12 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="controls">
-        <button class="download-btn" onclick="downloadPoster()"><i class="fa-solid fa-download"></i> Download Poster (PNG)</button>
+        <button class="download-btn" onclick="downloadPoster()"><i class="fa-solid fa-download"></i> Download Poster
+            (PNG)</button>
     </div>
 
     <!-- The Poster Design -->
@@ -232,7 +239,7 @@
         <div class="grid-overlay"></div>
 
         <div class="poster-content">
-            
+
             <div class="header">
                 <img src="logo.png" alt="SecureLayer Logo" crossorigin="anonymous">
                 <h1>SecureLayer</h1>
@@ -244,7 +251,7 @@
                     <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <div class="service-text">Pentest as a Service (PTaaS)</div>
                 </div>
-                
+
                 <div class="service-item">
                     <div class="service-icon"><i class="fa-solid fa-box-check"></i></div>
                     <div class="service-text">Product Security as a Service</div>
@@ -286,7 +293,7 @@
         function downloadPoster() {
             const btn = document.querySelector('.download-btn');
             btn.innerText = "Generating PNG...";
-            
+
             // html2canvas renders the div exactly as styled into a PNG data URL
             html2canvas(document.getElementById('poster'), {
                 scale: 1, // Capture at exactly 1080x1920
@@ -305,4 +312,5 @@
         }
     </script>
 </body>
+
 </html>
